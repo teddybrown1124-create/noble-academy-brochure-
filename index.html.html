@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE NOBLE ACADEMY - プレミアムブローシャー 2024</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.9;
+            color: #2c2c2c;
+            background: #f8f8f8;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            body {
+                background: white;
+            }
+        }
+        
+        /* Cover Page */
+        .cover {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 60px;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 300;
+            letter-spacing: 12px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: #c9a961;
+        }
+        
+        .diamond {
+            color: #c9a961;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        
+        .tagline {
+            font-size: 22px;
+            letter-spacing: 6px;
+            margin: 30px 0;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            letter-spacing: 3px;
+            margin-top: 20px;
+        }
+        
+        /* Content Pages */
+        .content-page {
+            padding: 60px 70px;
+            position: relative;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 70px;
+            font-size: 12px;
+            color: #999;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            border-bottom: 3px solid #c9a961;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .page-subtitle {
+            font-size: 18px;
+            color: #c9a961;
+            margin: 20px 0 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .content-text {
+            font-size: 15px;
+            line-height: 2.2;
+            text-align: justify;
+            margin-bottom: 25px;
+            color: #3a3a3a;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(to right, #f9f9f9, #ffffff);
+            border-left: 4px solid #c9a961;
+            padding: 25px 30px;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .highlight-title {
+            font-size: 20px;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .pillar-item {
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            transition: transform 0.3s ease;
+        }
+        
+        .pillar-number {
+            font-size: 48px;
+            color: #c9a961;
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 10px;
+        }
+        
+        .pillar-title {
+            font-size: 22px;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .pillar-text {
+            font-size: 14px;
+            line-height: 2;
+            color: #555;
+        }
+        
+        .info-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .info-list li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            font-size: 15px;
+            line-height: 2;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .info-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #c9a961;
+            font-size: 20px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .column-box {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #e8e8e8;
+        }
+        
+        .column-title {
+            font-size: 18px;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 2px solid #c9a961;
+            padding-bottom: 10px;
+        }
+        
+        .table-style {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .table-style th {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 15px;
+        }
+        
+        .table-style td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e8e8e8;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .price-box {
+            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .price-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .price-amount {
+            font-size: 42px;
+            font-weight: 700;
+            color: #c9a961;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 15px 0;
+        }
+        
+        .price-note {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-top: 15px;
+            line-height: 1.8;
+        }
+        
+        .contact-box {
+            background: linear-gradient(to right, #f8f8f8, #ffffff);
+            border: 2px solid #c9a961;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 24px;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .contact-info {
+            font-size: 16px;
+            line-height: 2.2;
+            color: #555;
+        }
+        
+        .accent-line {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #c9a961, #d4af6f);
+            margin: 25px 0;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Page 1: COVER -->
+<div class="page cover">
+    <div class="diamond">♦️</div>
+    <h1 class="logo">THE NOBLE ACADEMY</h1>
+    <p class="tagline">A Premier Institution for<br>Character, Culture & Global Excellence</p>
+    <div class="accent-line" style="background: #c9a961; width: 120px; height: 2px; margin: 30px auto;"></div>
+    <p class="subtitle">Noble Mind. Noble Life.</p>
+</div>
+
+<!-- Page 2: VISION -->
+<div class="page content-page">
+    <h2 class="page-title">VISION</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">品格と教養で、世界を変える次世代リーダーを育む</p>
+    
+    <div class="content-text">
+        THE NOBLE ACADEMYは、2026年9月、東京・勝どきに開校する日本初の世界に通用するエリート養成アフタースクールです。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">私たちが目指すもの</h3>
+        <p class="content-text">
+            知識だけでは足りない。学力だけでは不十分。<br>
+            真の教育とは、人としての品格と教養、そして世界で通用する力を育むこと。
+        </p>
+    </div>
+    
+    <div class="content-text">
+        現代のグローバル社会では、ただ学校の勉強ができるだけでは通用しません。<br>
+        変化の激しい時代を生き抜き、世界を舞台に活躍するために必要なのは、人格(Character)、教養(Culture)、そして卓越性(Excellence)です。
+    </div>
+    
+    <div class="content-text">
+        The Noble Academyでは、これからの時代を担う子どもたちに、単なる知識や学力を超えた、「人としての土台」と「世界で活躍できる力」を提供します。
+    </div>
+    
+    <div class="content-text">
+        私たちは、子どもたち一人ひとりが、Noble Mind(気高い心)とNoble Life(品格ある人生)を手に入れ、世界のどこでも、どんな環境でも、自信を持って輝ける存在になることを目指しています。
+    </div>
+    
+    <div class="page-number">Page 2</div>
+</div>
+
+<!-- Page 3: WHAT IS NOBLE -->
+<div class="page content-page">
+    <h2 class="page-title">What is The Noble Academy?</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">学力を超えた、真の教育を</p>
+    
+    <div class="content-text">
+        THE NOBLE ACADEMYは、従来の学習塾や習い事とは全く異なる、次世代型エリート教育機関です。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">Nobleが提供する唯一無二の教育</h3>
+        <ul class="info-list">
+            <li>人格教育(Character Development)<br>道徳心、リーダーシップ、レジリエンスなど、人として最も大切な資質を育てます</li>
+            <li>国際教養(Global Literacy)<br>英語・中国語による完全イマージョン教育、世界の文化・歴史・哲学を学びます</li>
+            <li>本物の食育(Food & Wellness)<br>100%オーガニック給食と食の哲学を通じ、健康と美意識を養います</li>
+            <li>一流文化体験(Premium Culture)<br>茶道、書道、クラシック音楽、美術など、本物の文化に触れる体験</li>
+            <li>学びの基礎力(Foundations of Intelligence)<br>思考力、読解力、表現力など、あらゆる学びの土台となる力を鍛えます</li>
+        </ul>
+    </div>
+    
+    <div class="content-text">
+        私たちは、子どもたちに「ただ勉強ができる」だけではなく、「人として尊敬される存在」になるための人格教育を提供します。
+    </div>
+    
+    <div class="content-text">
+        The Noble Academyでは、世界トップクラスの教育メソッドと日本の伝統文化を融合させ、世界のどこでも通用するグローバル・エリートを育成します。
+    </div>
+    
+    <div class="page-number">Page 3</div>
+</div>
+
+<!-- Page 4: WHY CHARACTER -->
+<div class="page content-page">
+    <h2 class="page-title">Why Character First?</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">なぜ人格教育が最優先なのか</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/mYXRYHKL?token=Z0FBQUFBQnBHSEhTVXY1Z0R4SE96RVloc3pKaUs2N2RLRWRUODdyVjhWbExIMWFCSFpnN3d3dnIyaUpLWWhzbWpndkY5ZHVOZE1GZ2VCck05Zlo3Vy1oNnhBd252V24zaWU2bExDV0VLQ09oUWVNc0ExQjhJSkRJQlNjNnpSNUJGcUY5ckR0TW4ya1o5dk1jZTZGUzgtV19TV2oxX2lFWnN6bVM2S1NGYjFtamdhbHVhRXVwbUkwYVd5N2xMUmQ4dTl3QnJFb1hwU0xsMFA3YXVwYTRUQUtDejIxUjhMYUR6dGJWR0hndmpsX1J0Uk1NRHdXUkxxRGRXY1hVWEw0LU5pWlZYYjlQQ0dqalZQSkNGckxldGxnczRrTFR2MVRjX3c9PQ" alt="The Noble Academy">
+    
+    <div class="content-text">
+        多くの教育機関が「学力」「成績」「偏差値」を重視する中、The Noble Academyが最も重視するのは「人格(Character)」です。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">Character Firstの理由</h3>
+        <p class="content-text">
+            ハーバード大学、オックスフォード大学、ケンブリッジ大学など、世界のトップ大学が求めているのは、単に成績が優秀な学生ではありません。<br><br>
+            彼らが求めているのは、人格的に優れ、社会に貢献できるリーダーです。
+        </p>
+    </div>
+    
+    <div class="content-text">
+        世界のエリート教育では、Integrity(誠実さ)、Empathy(共感力)、Resilience(回復力)、Leadership(リーダーシップ)など、人間としての基礎力が最も重視されます。
+    </div>
+    
+    <div class="two-column">
+        <div class="column-box">
+            <h4 class="column-title">従来の教育</h4>
+            <p class="content-text">✗ テストの点数重視<br>✗ 詰め込み型学習<br>✗ 個性を無視<br>✗ 人格教育の欠如</p>
+        </div>
+        <div class="column-box">
+            <h4 class="column-title">The Noble Academyの教育</h4>
+            <p class="content-text">✓ 人格を最優先<br>✓ 思考力・探究力重視<br>✓ 個性を伸ばす<br>✓ グローバル視点</p>
+        </div>
+    </div>
+    
+    <div class="content-text">
+        私たちは、子どもたちに「人として尊敬される力」を身につけることで、学力や成績は自然とついてくると考えています。<br>
+        実際、世界のトップスクールに進学する子どもたちの多くは、人格的に優れているという共通点があります。
+    </div>
+    
+    <div class="page-number">Page 4</div>
+</div>
+
+<!-- Page 5: FIVE PILLARS -->
+<div class="page content-page">
+    <h2 class="page-title">Five Pillars of Noble Education</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">The Noble Academyを支える5つの柱</p>
+    
+    <div class="pillars-grid">
+        <div class="pillar-item">
+            <div class="pillar-number">1</div>
+            <h3 class="pillar-title">人格教育(Character Development)</h3>
+            <p class="pillar-text">道徳心、誠実さ、共感力、リーダーシップ、レジリエンスなど、人として最も大切な資質を育てます。</p>
+        </div>
+        
+        <div class="pillar-item">
+            <div class="pillar-number">2</div>
+            <h3 class="pillar-title">国際教養(Global Literacy)</h3>
+            <p class="pillar-text">英語・中国語の完全イマージョン教育、世界の文化・歴史・哲学を学び、真のグローバル人財を育成します。</p>
+        </div>
+        
+        <div class="pillar-item">
+            <div class="pillar-number">3</div>
+            <h3 class="pillar-title">本物の食育(Food & Wellness)</h3>
+            <p class="pillar-text">100%オーガニック給食、東洋医学、日本古来の食に基づく食養生を通じ、心身の健康とマナー、食文化への理解を深めます。</p>
+        </div>
+        
+        <div class="pillar-item">
+            <div class="pillar-number">4</div>
+            <h3 class="pillar-title">一流文化体験(Premium Culture)</h3>
+            <p class="pillar-text">茶道、書道、クラシック音楽、美術鑑賞など、本物の文化芸術に触れ、美意識と教養を磨きます。</p>
+        </div>
+        
+        <div class="pillar-item">
+            <div class="pillar-number">5</div>
+            <h3 class="pillar-title">学びの基礎力(Foundations of Intelligence)</h3>
+            <p class="pillar-text">批判的思考力、読解力、表現力、問題解決力など、あらゆる学びの土台となる力を鍛えます。</p>
+        </div>
+    </div>
+    
+    <div class="highlight-box">
+        <p class="content-text">
+            これら5つの柱が統合的に機能することで、子どもたちは単なる「勉強ができる子」ではなく、「人として尊敬され、世界で活躍できる人財」へと成長していきます。
+        </p>
+    </div>
+    
+    <div class="page-number">Page 5</div>
+</div>
+
+<!-- Page 6: CHARACTER DEVELOPMENT -->
+<div class="page content-page">
+    <h2 class="page-title">Character Development</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">人格教育 - すべての基盤</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/nW4brdOy?token=Z0FBQUFBQnBHSElxNFpmTDNiZzFqX012RC0xd015bWNuRWN5UDBnUC16dHFGQU04ZTJYMy1wZGZOWlRsTHQ4TUtNX3UycEtOb0FXN3dPOGsxa3dRSW1yLWJIT05MVlVlWHVrYWFvUnJlelBtdEtUckdQaTlySHRER1NHcDJfVEUtMVJBMTdwb1lmTTVwNy1QUlpqdEJDcF9KNzU1ZzN0T25HcUpyb2hCb185NGdZTExoNlNTRW1hN2dueUV4ajJzSUdBT18tcFBOWDhFbmRNZ0plck15RUtaNWo1WjFaSUJOaThDS3d3bTIyVzdCektGaVQtbVk2cVkta3JjZHRJNk1PODl0MlMzT190Q2d4c2UxWUlObjBjUkpDTUhFRzFib0E9PQ" alt="The Noble Academy">
+    
+    <div class="content-text">
+        The Noble Academyの人格教育は、世界のトップ校で実践されているCharacter Educationのメソッドを採用しています。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">育む6つの人格的資質</h3>
+        <ul class="info-list">
+            <li>Integrity(誠実さ) - 正直であること、約束を守ること</li>
+            <li>Empathy(共感力) - 他者の気持ちを理解し、思いやる力</li>
+            <li>Resilience(回復力) - 困難に立ち向かい、成長する力</li>
+            <li>Leadership(リーダーシップ) - 自ら考え、行動し、他者を導く力</li>
+            <li>Responsibility(責任感) - 自分の行動に責任を持つ姿勢</li>
+            <li>Gratitude(感謝の心) - すべてに感謝し、謙虚である心</li>
+        </ul>
+    </div>
+    
+    <div class="content-text">
+        毎日のリフレクション(内省)、マインドフルネス瞑想、を通じて、子どもたちは自分自身と向き合い、人としての在り方を学びます。
+    </div>
+    
+    <div class="content-text">
+        また、サービスラーニング(社会貢献活動)を通じて、地域社会や世界への貢献意識を育て、「自分は社会の一員である」という自覚を持たせます。
+    </div>
+    
+    <div class="page-number">Page 6</div>
+</div>
+
+<!-- Page 7: GLOBAL LITERACY -->
+<div class="page content-page">
+    <h2 class="page-title">Global Literacy</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">国際教養 - 世界を知る、世界で生きる</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/S9JLUvop?token=Z0FBQUFBQnBHSElxSjlyUlc4YndkUUNUd0JzdmNNeVcwZDlJdkZmZDByakJXdk9DaDlBYnhMUklZVko2TlFIdjVDeHdyT1pQNjNrcVVxOVEtNnNlU0pfV0NLU3ZZdDcwemMyZHpUbWd5bVBUTGdYdU1xNVpjQUt1ZDdxTndoWXJJbmRQRVpFbFNQYmRxd1BuWlk4eXY4NUg2ek5EM2NYWE9NcUxnbnFCeTNvckhxMXlqWVBQUnNXLURpWE8zOUFCdzVKaUNiN2JfdVdWak8zOW9ISERtLUZGeldFS1FXYkJzOHhmVGtmTGVXSmd1TEFjZm9wVE5RQ2YzTnlhT2RKZTd6M3pOeWNvbldkRFlNaE1obkZHQUxaeVJlY2pmeVM4dGc9PQ" alt="The Noble Academy">
+    
+    <div class="content-text">
+        グローバル時代に求められるのは、単に英語が話せることではなく、世界の多様性を理解し、異文化の中で活躍できる力です。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">Global Literacyで育む力</h3>
+        <ul class="info-list">
+            <li>言語力 - 英語・中国語の完全バイリンガル環境</li>
+            <li>文化理解 - 世界の歴史、宗教、価値観を学ぶ</li>
+            <li>国際感覚 - グローバルな視点で物事を考える力</li>
+            <li>異文化適応力 - どんな環境でも柔軟に対応できる力</li>
+            <li>世界市民意識 - 地球規模で物事を考える姿勢</li>
+        </ul>
+    </div>
+    
+    <div class="content-text">
+        The Noble Academyでは、英語70%、中国語30%の完全イマージョン環境で学習を行います。<br>
+        子どもたちは日常的に複数の言語を使い分け、自然とバイリンガル・トリリンガルの力を身につけます。
+    </div>
+    
+    <div class="content-text">
+        また、世界の文化・歴史・哲学を学び、異なる価値観や考え方を理解することで、真のグローバル人材としての基盤を築きます。
+    </div>
+    
+    <div class="page-number">Page 7</div>
+</div>
+
+<!-- Page 8: BILINGUAL & IB -->
+<div class="page content-page">
+    <h2 class="page-title">Bilingual & IB Education</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">バイリンガル教育と国際バカロレア(IB)型学習</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/Q4qqR4L8?token=Z0FBQUFBQnBHSEhTWTRIY0dHRUlPY2psYmJHbEZzd09vWmhsZzZXNnZXVkRvZzRoX3R4cElJOGh4M2hkRDZtU0xmNTFNYVU0NWQ1R19EaGFEQkJ5cFE3N01FZHF1NEQteXZNTFk4bWxhWXVTZmtfSTFiUDZ3Qi1KM1BGTUFkdHV2YjItMVc0MENPT2FLdndOc2dXWnpmaXdqb3h5Q3pNR2wtX2ttVFIxbUREdFFsYV9XWTNaWHNRWFREYTBlNTBVWG01aERRVWhmQXl3OXN0Nmh4YW5ON21qUFdMTGJwQ0ZEamRoMnRodUJ4NzBkLU1qWm5WcnVPV3NqU19BcHFxcTUzQk41THBOenA3NWt3VEpNb2xRMjFUWEFrcVUtS2xRYUE9PQ" alt="The Noble Academy">
+    
+    <div class="content-text">
+        The Noble Academyでは、英語70%、中国語30%の完全イマージョン教育を実施します。<br>
+        授業、プロジェクト、遊び、食事の時間まで、すべての活動が英語・中国語で行われます。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">IB型探究学習の特徴</h3>
+        <p class="content-text">
+            国際バカロレア(IB)のメソッドを取り入れ、暗記型ではなく、探究型の学びを実践します。<br><br>
+            「なぜ?」「どうして?」を大切にし、子どもたち自身が問いを立て、調べ、考え、発表する力を育てます。
+        </p>
+    </div>
+    
+    <div class="two-column">
+        <div class="column-box">
+            <h4 class="column-title">暗記型学習</h4>
+            <p class="content-text">✗ 答えを覚える<br>✗ テスト重視<br>✗ 受動的学習</p>
+        </div>
+        <div class="column-box">
+            <h4 class="column-title">IB型探究学習</h4>
+            <p class="content-text">✓ 自ら問いを立てる<br>✓ 思考プロセス重視<br>✓ 能動的学習</p>
+        </div>
+    </div>
+    
+    <div class="content-text">
+        この教育法により、子どもたちは批判的思考力、問題解決力、創造力を自然と身につけ、将来的に国内外のIB校や世界のトップ校へとスムーズに進学できる基盤が整います。
+    </div>
+    
+    <div class="page-number">Page 8</div>
+</div>
+
+<!-- Page 9: STEAM -->
+<div class="page content-page">
+    <h2 class="page-title">STEAM Education</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">科学・技術・工学・芸術・数学の統合教育</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/S9JLUvop?token=Z0FBQUFBQnBHSElxSjlyUlc4YndkUUNUd0JzdmNNeVcwZDlJdkZmZDByakJXdk9DaDlBYnhMUklZVko2TlFIdjVDeHdyT1pQNjNrcVVxOVEtNnNlU0pfV0NLU3ZZdDcwemMyZHpUbWd5bVBUTGdYdU1xNVpjQUt1ZDdxTndoWXJJbmRQRVpFbFNQYmRxd1BuWlk4eXY4NUg2ek5EM2NYWE9NcUxnbnFCeTNvckhxMXlqWVBQUnNXLURpWE8zOUFCdzVKaUNiN2JfdVdWak8zOW9ISERtLUZGeldFS1FXYkJzOHhmVGtmTGVXSmd1TEFjZm9wVE5RQ2YzTnlhT2RKZTd6M3pOeWNvbldkRFlNaE1obkZHQUxaeVJlY2pmeVM4dGc9PQ" alt="The Noble Academy">
+    
+    <div class="content-text">
+        The Noble AcademyのSTEAM教育は、Science(科学)、Technology(技術)、Engineering(工学)、Arts(芸術)、Mathematics(数学)を統合的に学ぶプログラムです。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">STEAM教育で育む力</h3>
+        <ul class="info-list">
+            <li>論理的思考力 - 数学的・科学的に物事を考える力</li>
+            <li>創造力 - ゼロから何かを生み出す力</li>
+            <li>問題解決力 - 複雑な課題を解決する力</li>
+            <li>実験精神 - 失敗を恐れず、挑戦する姿勢</li>
+            <li>デザイン思考 - 美しさと機能性を両立させる力</li>
+        </ul>
+    </div>
+    
+    <div class="content-text">
+        子どもたちは、ロボティクス、プログラミング、サイエンス実験、エンジニアリングプロジェクトなど、実際に手を動かしながら学びます。
+    </div>
+    
+    <div class="content-text">
+        また、Arts(芸術)を組み込むことで、単なる技術者ではなく、美意識と創造性を持った次世代イノベーターを育成します。
+    </div>
+    
+    <div class="page-number">Page 9</div>
+</div>
+
+<!-- Page 10: FOOD & WELLNESS -->
+<div class="page content-page">
+    <h2 class="page-title">Food & Wellness</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">本物の食育 - 100%オーガニック給食</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/VnaPKh44?token=Z0FBQUFBQnBHSEhTYjB0a0dBcWlvRGlHRFZFREE2aWxLVnZ6RGhzUTdHWHNMSFdFSE1oMEVKSnNvM3VqN1VkcU1yYmVCck1MT1RGZXF6WEI1WHpzS2VWMmZTeWxBd01nVlhveFFNeUtydmUtdG9MYzg3eFFTeHc2NFd0em9RY3BFb2FERS1zQllzQmFtdUlLV1g3X2lVMnZvaVN6QVFWWTlCSHRMRjBuUlBtektMZ3phZXNuWk0zRmU2S3pWRi1LYVNyNWxFRkpjSy1SMlZkY3QyVDBJX1NHSi1yNFl6Rnd0Yl80VHhybjZScjhTQlZLc3FkYkJTVEtCeHRRbU9fT29KYU5DbFRHVTdQOU5zdUNjWS1YQm1UTHh4MWhnWUdpeEE9PQ" alt="The Noble Academy">
+    
+    <div class="content-text">
+        人の体は、食べたものでしかつくられません。<br>
+        どれほど高価なサプリメントや希少な薬であっても、からだをつくってはくれません。<br>
+        健康は全ての土台です。<br><br>
+        
+        人に愛されて自分の思い描く幸せな人生を送れたとしても、健康の土台が揺らぐと、それまで積み上げてきた幸せの全てが一気に崩れてしまいます。<br>
+        だからこそ、The Noble Academy では食を人生の土台として重要視しています。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">提供する食事はすべて：</h3>
+        <ul class="info-list">
+            <li>100％オーガニック</li>
+            <li>無添加</li>
+            <li>砂糖不使用（白砂糖ゼロ）</li>
+            <li>自家製（梅干し・味噩・糠漬け）</li>
+            <li>自然栽培米</li>
+            <li>天然だしの一汁一菜</li>
+            <li>旬野菜の食卓</li>
+            <li>安全な油（オーガニックの本物のみ）</li>
+            <li>おやつも完全手作り</li>
+            <li>抗生物質、ホルモン剤不使用の天然の魚</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">食育が育てるもの</h3>
+        <ul class="info-list">
+            <li>集中力</li>
+            <li>心の安定</li>
+            <li>感性（味覚・嗅覚）</li>
+            <li>自律神経</li>
+            <li>免疫力</li>
+            <li>姿勢</li>
+            <li>学習効率</li>
+            <li>健康</li>
+        </ul>
+        <p class="content-text">
+            食は学習力にも深く影響します。<br>
+            そして何より、子どもの心と品格を育てます。
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">食卓の美学も指導</h3>
+        <ul class="info-list">
+            <li>器の扱い</li>
+            <li>姿勢</li>
+            <li>箸づかい</li>
+            <li>静けさ</li>
+            <li>命への感謝</li>
+            <li>美しい所作</li>
+        </ul>
+    </div>
+    
+    <div class="content-text">
+        これらを日常で育てるアフタースクールは、<br>
+        日本で The Noble Academy だけです。
+    </div>
+    
+    <div class="page-number">Page 10</div>
+</div>
+
+<!-- Page 11: PREMIUM CULTURE -->
+<div class="page content-page">
+    <h2 class="page-title">Premium Culture Experience</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">一流文化体験 - 本物に触れる</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/hWF94v0v?token=Z0FBQUFBQnBHSElxUUM2LW5IMEFUbkk4Ymd1UW01YklpdTFKdFR5eTB0Ty1WenR0RXI2YmVHekpfWWl5UnZIc2lvV2U0X0xfdTRaOC1UcWhQV0Z2a3JpYzc3YzlIWE1YMFdzbHZPdHBfZjZqVWdqNzRPVnoxZE5oN1V3QTE3cGhCWVFJYjRqeEtwRURacE1EbmkwckhZZ3Iyakw1SmFNSHY1b1Y2QktEZWk2ZUlUODdyeEpHTUJiWVRXUmtKSWNEVm0wUXFfaFNaMjVwVlFzUF8wYXcxTzR0RzR2UkdTTzlUUGlBcnpQWEhZUEZqV2pXS1lwMEd6WWhhdW1BZ1F3aktqSXFGeHdmTXVHendDZXBYNHEyb1ZDM2RIeXNIc2drS1E9PQ" alt="The Noble Academy">
+    
+    <div class="content-text">
+        真の教養は、本物の文化芸術に触れることから生まれます。<br>
+        The Noble Academyでは、日本の伝統文化と西洋のクラシック文化を体系的に学びます。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">Premium Culture Program</h3>
+        <ul class="info-list">
+            <li>茶道 - 日本の美意識、礼儀作法、精神性を学ぶ</li>
+            <li>書道 - 文字の美しさ、集中力、表現力を磨く</li>
+            <li>華道 - 自然との調和、美的感覚を養う</li>
+            <li>クラシック音楽 - 一流の音楽を聴き、感性を育てる</li>
+            <li>美術鑑賞 - 本物の芸術作品に触れ、審美眼を磨く</li>
+            <li>能・歌舞伎 - 日本の伝統芸能を体験する</li>
+        </ul>
+    </div>
+    
+    <div class="content-text">
+        これらの文化体験を通じて、子どもたちは美意識、教養、立ち居振る舞いを自然と身につけ、どこに出ても恥ずかしくない品格を育みます。
+    </div>
+    
+    <div class="content-text">
+        また、定期的に一流の文化施設(コンサートホール、美術館、歴史的建造物)を訪問し、本物の文化に触れる機会を提供します。
+    </div>
+    
+    <div class="page-number">Page 11</div>
+</div>
+
+<!-- Page 12: Foundations of Intelligence -->
+<div class="page content-page">
+    <h2 class="page-title">Foundations of Intelligence</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">学びの基礎力 - すべての学びの土台</p>
+    
+    <div class="content-text">
+        The Noble Academyでは、あらゆる学びの土台となる基礎力を徹底的に鍛えます。<br>
+        これらの力は、将来どんな分野に進んでも必ず役立つ、一生ものの財産です。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">鍛える5つの基礎力</h3>
+        <p class="content-text">
+            • <strong>Critical Thinking(批判的思考力)</strong><br>
+            情報を鵜呑みにせず、論理的に考え、判断する力<br><br>
+            
+            • <strong>Reading Comprehension(読解力)</strong><br>
+            文章の意味を正確に理解し、行間を読む力<br><br>
+            
+            • <strong>Communication(表現力)</strong><br>
+            自分の考えを明確に、説得力を持って伝える力<br><br>
+            
+            • <strong>Problem Solving(問題解決力)</strong><br>
+            複雑な問題を分解し、解決策を導き出す力<br><br>
+            
+            • <strong>Metacognition(メタ認知力)</strong><br>
+            自分の学び方を理解し、最適化する力
+        </p>
+    </div>
+    
+    <div class="content-text">
+        これらの力は、ディベート、ライティング、プレゼンテーション、哲学対話、ソクラテスメソッドなど、実践的なプログラムを通じて育成されます。<br><br>
+        
+        特に、読書習慣を重視し、年間100冊以上の本を読む環境を整えます。<br>
+        子どもたちは、幅広いジャンルの本に触れることで、語彙力、想像力、思考力を飛躍的に高めます。
+    </div>
+    
+    <div class="page-number">Page 12</div>
+</div>
+
+<!-- Page 13: Weekly Program -->
+<div class="page content-page">
+    <h2 class="page-title">Weekly Program</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">週間プログラム - 充実した毎日</p>
+    
+    <div class="content-text">
+        <strong>🕒 基本時間</strong><br>
+        14:30〜17:30（コアタイム）<br>
+        ＋ 早帰り対応（Early Program）<br>
+        ＋ 延長（17:30〜19:30）
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">MONDAY｜English Immersion × Character</h3>
+        <p class="content-text">
+            <strong>英語 × 人格 × コミュニケーション</strong><br>
+            • ネイティブ英語イマージョン<br>
+            • 感情語彙（Emotional Literacy）<br>
+            • ペアトーク<br>
+            • 礼節・姿勢・集中トレーニング<br>
+            • パークタイム（晴天時）<br><br>
+            <strong>目的：</strong>英語で“心と言葉を整える”。
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">TUESDAY｜Global STEAM（英語運営）</h3>
+        <p class="content-text">
+            <strong>英語 × STEAM × 探究</strong><br>
+            • ロボティクス（英語）<br>
+            • プログラミング<br>
+            • サイエンス探究<br>
+            • テクノロジー × クリエイティビティ<br>
+            • IB探究ノート（英語記述）<br><br>
+            <strong>目的：</strong>“英語で学ぶ” 世界標準の科学教育。
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">WEDNESDAY｜Chinese × Culture Arts</h3>
+        <p class="content-text">
+            <strong>中国語 × 日本文化 × 世界文化</strong><br>
+            • 中国語ネイティブ講師<br>
+            • HSK準備（会話中心）<br>
+            • 書道／茶道／芸術体験ローテーション<br>
+            • 世界文化（インターナショナル講師）<br>
+            • パーク観察<br><br>
+            <strong>目的：</strong>言語と文化の統合。世界と日本を両方理解する土台をつくる。
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">THURSDAY｜English Literacy × Inquiry</h3>
+        <p class="content-text">
+            <strong>英語 × 読解 × IB型探究</strong><br>
+            • 英語読書（Guided Reading）<br>
+            • 英語での問い立て（Inquiry）<br>
+            • 世界のショートニュース（子ども版）<br>
+            • Think & Write（書く力）<br><br>
+            <strong>目的：</strong>英語を“学ぶ”のではなく、“英語で考える”。
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">FRIDAY｜Presentation × Debate</h3>
+        <p class="content-text">
+            <strong>英語・中国語 × プレゼン × 表現</strong><br>
+            • 英語プレゼン<br>
+            • 中国語での簡易スピーチ<br>
+            • ディベート入門<br>
+            • 多文化ニュース<br>
+            • 週次リフレクション（英語/中国語）<br><br>
+            <strong>目的：</strong>世界に通用する「自分の言葉で語る力」。
+        </p>
+    </div>
+    
+    <div class="page-number">Page 13</div>
+</div>
+
+<!-- Page 14: Daily Flow -->
+<div class="page content-page">
+    <h2 class="page-title">Daily Routine</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">1日の流れ - 充実した学びの時間</p>
+    
+    <div class="content-text">
+        The Noble Academy の1日は、子どもの心・知性・身体が最も伸びるよう細部まで計算された流れになっています。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">14:30 – Arrival & Calm Start</h3>
+        <p class="content-text">
+            <strong>穏やかなスタート</strong><br>
+            • 点呼・挨拶<br>
+            • 心を落ち着けるルーティン<br>
+            • お茶で一息（まこも茶・三年番茶）<br>
+            • 軽い読書
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">15:00 – Core Program</h3>
+        <p class="content-text">
+            <strong>メイン授業</strong><br>
+            曜日別プログラム<br>
+            （英語 / 中国語 / STEAM / 食育 / プレゼン）
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">16:10 – Nature & Movement</h3>
+        <p class="content-text">
+            <strong>外活動・感性</strong><br>
+            • 公園探究（晴天時）<br>
+            • 自然観察<br>
+            • 五感刺激のパークアクティビティ<br>
+            • 室内の日は感覚統合遊び
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">16:40 – Learning Studio</h3>
+        <p class="content-text">
+            <strong>知的時間</strong><br>
+            • 読書<br>
+            • 宿題サポート
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">17:20 – Reflection & Closing</h3>
+        <p class="content-text">
+            • 日誌を書く<br>
+            • ボランティアリーダー制度<br>
+            • 挨拶・帰宅<br><br>
+            <em>※その後は延長・夕食・ナイトケアへ続く</em>
+        </p>
+    </div>
+    
+    <div class="page-number">Page 14</div>
+</div>
+
+<!-- Page 14-2: Outdoor Learning Program -->
+<div class="page content-page">
+    <h2 class="page-title">Outdoor Learning Program</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">自然 × 言語 × 科学 × 感性を融合した “本物の野外教育”</p>
+    
+    <div class="content-text">
+        The Noble Academy の屋外活動は、“ただの公園遊び” ではありません。<br><br>
+        
+        世界の名門校（UWC・Aングロン・Le Rosey・Forest School UK）が採用する本格的な Outdoor Education（屋外教育） を、勝どきで実践します。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">🌿 Outdoor Education が育てる力</h3>
+        
+        <p class="content-text">
+            <strong>✔ 1. 五感と感性（Sense & Aesthetics）</strong><br>
+            自然は、もっとも高度な教室。<br>
+            ・光の色、風の動き、季節の匂い、木の音、水の冷たさ<br>
+            これらが “生きた感性” を育てます。<br><br>
+            
+            <strong>✔ 2. 科学 × 探究（Science & Inquiry）</strong><br>
+            公園は「小さな自然科学のラボ」です。<br>
+            ・葉の形、土の状態、季節ごとの植物の変化、気温と体の感じ方<br>
+            これらを英語や中国語で観察・記録・比較します。<br><br>
+            
+            <strong>✔ 3. 言語力（語彙の爆発的増加）</strong><br>
+            屋外のほうが、子どもの語彙は 3、5倍 増えます。<br>
+            理由：“目の前の現象”と“言語”が結びつくため。<br>
+            → 英語・中国語で自然を説明させると理解も発話も一気に伸びます。<br><br>
+            
+            <strong>✔ 4. 社会性（Social Skills）</strong><br>
+            自然の中では、順番・助け合い・交渉・気遣いが自然と育ちます。<br><br>
+            
+            <strong>✔ 5. 情緒の安定（Emotional Stability）</strong><br>
+            自然は科学的に「心を落ち着かせる」効果があるため、After-school 時間に最適です。
+        </p>
+    </div>
+    
+    <div class="page-number">Page 14-2</div>
+</div>
+
+<!-- Page 15: Family Program -->
+<div class="page content-page">
+    <h2 class="page-title">Family Program</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">親 × 子 × 学び</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/FjsxTv7T?token=Z0FBQUFBQnBHSEhTN19hUGxZdE1pN3RIVGRDZV9adnJMSXRjT0hzTUI5NkdYY3FGMVBzcG41Ql9BeXNhN2ppXzJReFF1UVJBVzBaTFBCdWE4bGVYZmVGZ0lkV09HVG5pMlNfaXJNemhza1RmdEpWMXRKTXpNSG1iZlBONERESmc1Q0l3MHprQjBXLXhQbXFoakw1TURhOVJIS2JYbXRXemNGb0JWUHVRWDNhekdIV2p4d1pZS2FzbkprOTFGSjJIZ05EWVRQbmxLV1dsQzNaMmRnRU9BeVhjZkJVZ19HdXo5MnR6VzQyS0lfM0VvVGRmdk1YYnRmT3RWZ0VuZm1vR25MaU9EdkF3MG1KdmdmSmNLZFBXZnJRaWgwa3owWWc9PQ" alt="Family">
+    
+    <div class="content-text">
+        The Noble Academyでは、家族全体で子どもの成長を支えることを大切にしています。<br>
+        教育は学校だけで完結するものではなく、家庭との連携が不可欠です。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">親子食育クラス（季節の手仕事）</h3>
+        <ul class="info-list">
+            <li>味噩づくり</li>
+            <li>梅干しつくり</li>
+            <li>季節の食養生</li>
+            <li>一汁二菜の家庭構築</li>
+        </ul>
+        <p class="content-text">
+            健康と幸せ、全ての土台は腸からはじまります。
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">親子一流体験（週末クラス）</h3>
+        <ul class="info-list">
+            <li>茶道</li>
+            <li>料亭マナー</li>
+            <li>日本文化礼法</li>
+            <li>神社学（日本の精神文化）</li>
+            <li>工芸体験</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">Noble Parenting（保護者向け講座）</h3>
+        <p class="content-text">
+            <strong>テーマ例：</strong><br>
+            • 国際教育の進め方<br>
+            • 中学受験 vs IB<br>
+            • 食育で変わる心と身体<br>
+            • デジタルとの向き合い方<br>
+            • 才能の見つけ方<br>
+            • “幼少期の人間関係” の育て方<br>
+            • 世界大学への道筋<br><br>
+            
+            <strong>親の学びが、子どもの未来を最大化します。</strong>
+        </p>
+    </div>
+    
+    <div class="page-number">Page 15</div>
+</div>
+
+<!-- Page 16: Annual Calendar -->
+<div class="page content-page">
+    <h2 class="page-title">Annual Calendar</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">年間カレンダー - 特別なイベントが満載</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/JpYsOPCu?token=Z0FBQUFBQnBHSEhTdGJ3SFJMNGE3TDBTeXBiMFcwaW5iazBaTHYxcjQ0bjExVjZ4MlJMdGphUmxrYUNZeGtGYmpibWk4S0RjcWZuSDhtUWMwREtDdUJ0akVoTHRaQ0E3OFlsdmFlc2I0dDQzTjdfSWhsZTJXTTI2d0lJZ2RvSHFqak12T3hXV1lzVGxKVkdxRW43Rl9CSDNoTEJMVU13dUhxdGpuNm05SFozT2lra0x2blQzSVdDT3pPR25qWk1HQzBCTmNWcUdOdjdJRlU3R2x1N2QyOW14dVBXWjM3SWxhaUdyZU4xNWhYUVJGeVhYNGtIYTZ1Nzl2MGJnMDNBeFBjd0lXNlNEeFNVRFU5S2ZyVTAtR3p3NF9yVFU0WFE9PQ" alt="Calendar">
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">SPRING（春）</h3>
+        <ul class="info-list">
+            <li>親子食育レッスン</li>
+            <li>国宝文化体験合宿</li>
+            <li>芸術と自然の教室</li>
+            <li>新年度オリエンテーション</li>
+            <li>母の日イベント</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">SUMMER（夏）</h3>
+        <ul class="info-list">
+            <li>海外サマースクール（UWCSEA / Nexus 他）</li>
+            <li>自然探究合宿</li>
+            <li>IB探究発表会</li>
+            <li>食養生活夏のプログラム</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">AUTUMN（秋）</h3>
+        <ul class="info-list">
+            <li>料亭マナー会</li>
+            <li>伝統工芸ワークショップ</li>
+            <li>季節の手仕事（栗・柚子・秋の養生）</li>
+            <li>国際文化アートツアー</li>
+            <li>ハロウィンパーティー</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">WINTER（冬）</h3>
+        <ul class="info-list">
+            <li>国際スピーチ大会</li>
+            <li>IB年間発表</li>
+            <li>親子書初め</li>
+            <li>冬の食養（発酵と鍋）</li>
+            <li>雪の学校</li>
+            <li>クリスマス会</li>
+            <li>おせち料理つくり</li>
+        </ul>
+    </div>
+    
+    <div class="content-text">
+        年間を通じて、子どもたちの成長を祝う特別なイベントが盛りだくさん!<br>
+        家族みんなで参加できるプログラムも充実しています。
+    </div>
+    
+    <div class="page-number">Page 16</div>
+</div>
+
+<!-- Page 17: Outdoor Education -->
+<div class="page content-page">
+    <h2 class="page-title">Outdoor Education</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">自然体験教育 - 本物の学びは自然の中に</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/Mz2OUe-a?token=Z0FBQUFBQnBHSEhTRHBTb2RYbU5ycllySEtMVGQ4TGJQYkpscGV1WHFVdHM3SUVQSkJGR01OWTJNSVFBWmxiYWhnV3J3OERaNzE2eTYycTFoTXk5OVU5NnRyR0g5Nzh6N3FSZVFJX19OOHktRFJjeHg0WHJZc29LQnMwTEZ4N3dWQ3pSN3BucFN3T0h1Zm96QlZ6WVZmWlc2SFVFVF9laHYteUxfeTFZakN2dnhJZ2p1bHc1UFM1b0R6Q0o5TWptbVhxZ1c2Z1UtV3FIZnQwNXZIb0Q2RWwtTW1haVFHeHhxTGxJTFBYYXZLQlNMQUFNRjBSU3pTeWh4cG9jQ05UMG9WRnp1VUxhb1RYQkx5SHZvX1JWa05ZZlJEMU5pZHc9PQ" alt="Outdoor">
+    
+    <div class="content-text">
+        The Noble Academyでは、自然との触れ合いを重視し、定期的に屋外教育プログラムを実施します。<br>
+        真の学びは、教室の中だけでは完結しません。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">Outdoor Education Program</h3>
+        <p class="content-text">
+            • <strong>月例フィールドトリップ</strong><br>
+            森林、海、川、山などでの自然観察・探究活動<br><br>
+            
+            • <strong>農業体験</strong><br>
+            オーガニック農園での野菜栽培・収穫体験<br><br>
+            
+            • <strong>Survival Skills</strong><br>
+            キャンプファイヤー、テント設営、ナイフワークなど<br><br>
+            
+            • <strong>Environmental Education</strong><br>
+            環境保護、サステナビリティについて学ぶ<br><br>
+            
+            • <strong>Team Building Activities</strong><br>
+            ロープコース、トレッキングなどでチームワークを育む
+        </p>
+    </div>
+    
+    <div class="content-text">
+        自然の中での体験を通じて、子どもたちは自然への感謝、生命の尊さ、環境への責任を学びます。<br><br>
+        
+        また、レジリエンス(困難を乗り越える力)、協調性、リーダーシップなど、教室では学べない人間力を自然と身につけます。
+    </div>
+    
+    <div class="page-number">Page 17</div>
+</div>
+
+<!-- Page 18: International Partnerships -->
+<div class="page content-page">
+    <h2 class="page-title">International Partnerships</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">世界との繋がり - グローバルネットワーク</p>
+    
+    <img src="https://www.genspark.ai/api/files/s/OXy_0EPI?token=Z0FBQUFBQnBHSEhTTnc4c25hV1BXdE8xYjhzRmYzZi1sdEh4R0tPMlMyb0wxbGM0Q1hxMk5DZ0xTOU11N1lwUFpFYVRvMWtVVGVGRTV5V0lGVWRPaktkOXVHMXdjZ2Q3Tlh4VVlnTlgwSlBTV09iTGJBSjhna1VjcVIwWnhBT2p1MGMtcDkyM2ZiMnUtd29GOTJaWjhoTnhYZFRWSXh5b0pBVmh5c3lYMlJJTHR2SThZeGdqbGNSRmd6Y3RFMU9jcktvVHV1VTNLQmR6WWVaZXN5TkF6R1RkZmFlTzZIRnJZRHVUV3U3X3FoS2x3RjJLZGlYUklyOU1nWU9yaWg2UzRxbHZ5VWdvZ3NESGxfZ3RJMWh1MXpmc29DTG51MkE9PQ" alt="World Map">
+    
+    <div class="content-text">
+        The Noble Academyは、世界中の名門校・教育機関と提携し、グローバルな学びの機会を提供します。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">提携先(予定)</h3>
+        <p class="content-text">
+            • <strong>アメリカ</strong> - ボストン、ニューヨークのプレップスクール<br>
+            • <strong>イギリス</strong> - ロンドンのIB認定校<br>
+            • <strong>シンガポール</strong> - 国際バカロレア校<br>
+            • <strong>中国</strong> - 上海・北京の名門インターナショナルスクール<br>
+            • <strong>スイス</strong> - 名門ボーディングスクール
+        </p>
+    </div>
+    
+    <div class="content-text">
+        年に数回、オンライン交流授業や短期交換プログラムを実施し、世界中の子どもたちと一緒に学ぶ機会を提供します。<br><br>
+        
+        また、海外の教育専門家を定期的に招聘し、最先端の教育メソッドを取り入れ続けます。<br><br>
+        
+        The Noble Academyで学ぶことは、単に東京で学ぶのではなく、世界中の子どもたちと共に学ぶことを意味します。
+    </div>
+    
+    <div class="page-number">Page 18</div>
+</div>
+
+<!-- Page 19: Global Summer School -->
+<div class="page content-page">
+    <h2 class="page-title">Global Summer School</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">海外サマースクール - 世界を体験する夏</p>
+    
+    <div class="content-text">
+        毎年7月、The Noble Academyの生徒は海外提携校でのサマースクールに参加する機会があります(オプション)。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">Summer School 2026 予定地</h3>
+        <p class="content-text">
+            • <strong>アメリカ・ボストン</strong><br>
+            ハーバード大学周辺の名門プレップスクール(2週間)<br><br>
+            
+            • <strong>イギリス・ロンドン</strong><br>
+            オックスフォード大学連携サマープログラム(2週間)<br><br>
+            
+            • <strong>スイス・ジュネーブ</strong><br>
+            名門ボーディングスクール体験(2週間)
+        </p>
+    </div>
+    
+    <div class="content-text">
+        サマースクールでは、現地の子どもたちと一緒に学び、生活し、友情を育むことで、真のグローバル感覚を身につけます。<br><br>
+        
+        プログラム内容は、STEAM、リーダーシップ、アート、スポーツなど多岐にわたり、英語で行われます。<br><br>
+        
+        また、ホームステイまたは学生寮での生活を通じて、自立心、異文化適応力、コミュニケーション力を飛躍的に高めます。<br><br>
+        
+        <strong>費用:</strong> ¥500,000〜¥800,000程度(渡航費・滞在費込み、プログラムにより異なる)
+    </div>
+    
+    <div class="page-number">Page 19</div>
+</div>
+
+<!-- Page 20: Pathway to World Universities -->
+<div class="page content-page">
+    <h2 class="page-title">Pathway to World Universities</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">世界トップ大学への進学ルート</p>
+    
+    <div class="content-text">
+        The Noble Academyで育った子どもたちは、将来的に世界のトップ大学への進学を目指します。<br>
+        私たちは、そのための確実な道筋を用意しています。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">The Noble Academy → 世界大学への道</h3>
+        <p class="content-text">
+            <strong>① The Noble Academy(小1〜小3)</strong><br>
+            人格・教養・グローバル力の基礎を築く<br><br>
+            
+            <strong>② 国内IB校 or インターナショナルスクール(小4〜高3)</strong><br>
+            国際バカロレア(IB)で世界基準の教育を受ける<br><br>
+            
+            <strong>③ 世界トップ大学(大学〜大学院)</strong><br>
+            ハーバード、オックスフォード、ケンブリッジ、スタンフォード等
+        </p>
+    </div>
+    
+    <div class="content-text">
+        The Noble Academyで育む人格、教養、学びの基礎力は、どんな学校に進学しても通用する一生ものの財産です。
+    </div>
+    
+    <div class="two-column">
+        <div class="column-box">
+            <h4 class="column-title">国内IB校の例</h4>
+            <p class="content-text">開智日本橋学園<br>三田国際学園<br>ドルトン東京学園<br>広尾学園</p>
+        </div>
+        <div class="column-box">
+            <h4 class="column-title">目指す世界大学</h4>
+            <p class="content-text">ハーバード大学<br>オックスフォード大学<br>ケンブリッジ大学<br>スタンフォード大学</p>
+        </div>
+    </div>
+    
+    <div class="content-text">
+        私たちは、進学コンサルティングも提供し、お子様に最適な進学先選びをサポートします。
+    </div>
+    
+    <div class="page-number">Page 20</div>
+</div>
+
+<!-- Page 21: Admission Guide -->
+<div class="page content-page">
+    <h2 class="page-title">Admission Guide</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">入学案内 - Nobleファミリーへようこそ</p>
+    
+    <div class="content-text">
+        THE NOBLE ACADEMYは、2026年9月開校予定です。<br>
+        現在、創立メンバーとして入学を希望されるご家族を募集しています。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">募集要項</h3>
+        <p class="content-text">
+            • <strong>対象学年:</strong> 小学1年生〜3年生(2026年9月時点)<br>
+            • <strong>定員:</strong> 各学年12名(合計36名)<br>
+            • <strong>通学日数:</strong> 週3日、週4日、週5日から選択可能<br>
+            • <strong>時間:</strong> 14:00〜19:00(送迎時間は柔軟に調整可能)<br>
+            • <strong>場所:</strong> 東京都中央区勝どき(予定)
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">入学選考プロセス</h3>
+        <p class="content-text">
+            <strong>① 説明会参加</strong><br>
+            The Noble Academyの理念・プログラムを詳しくご説明<br><br>
+            
+            <strong>② 入学願書提出</strong><br>
+            願書・エッセイ・推薦状の提出<br><br>
+            
+            <strong>③ 親子面接</strong><br>
+            お子様と保護者の方との面接(日本語 or 英語)<br><br>
+            
+            <strong>④ 体験セッション</strong><br>
+            お子様が実際のプログラムを体験(半日)<br><br>
+            
+            <strong>⑤ 合否通知</strong><br>
+            面接から2週間以内にメールにて通知
+        </p>
+    </div>
+    
+    <div class="content-text">
+        <strong>重視する点:</strong> 学力よりも、ご家族の教育理念とお子様の可能性を重視します。<br>
+        The Noble Academyは、同じ価値観を持つ家族のコミュニティです。
+    </div>
+    
+    <div class="page-number">Page 21</div>
+</div>
+
+<!-- Page 22: Tuition & Fees -->
+<div class="page content-page">
+    <h2 class="page-title">Tuition & Fees</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">学費について - 投資としての教育</p>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">■ Core Program（14:30–17:30）</h3>
+        <table class="table-style">
+            <tr>
+                <th>コース</th>
+                <th>月額</th>
+                <th>半年一括</th>
+                <th>年間一括</th>
+            </tr>
+            <tr>
+                <td>週3回</td>
+                <td>¥112,000</td>
+                <td>¥639,000 → <strong>¥610,000</strong></td>
+                <td>¥1,280,000 → <strong>¥1,210,000</strong></td>
+            </tr>
+            <tr>
+                <td>週4回</td>
+                <td>¥138,000</td>
+                <td>¥787,000 → <strong>¥750,000</strong></td>
+                <td>¥1,575,000 → <strong>¥1,490,000</strong></td>
+            </tr>
+            <tr>
+                <td>週5回</td>
+                <td>¥162,000</td>
+                <td>¥925,000 → <strong>¥880,000</strong></td>
+                <td>¥1,850,000 → <strong>¥1,740,000</strong></td>
+            </tr>
+        </table>
+        <p class="content-text">
+            ※ 英語75%／中国語25% の高度バイリンガル運営<br>
+            ※ STEAM・IB探究・文化・屋外学習すべて含む
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">MEALS（ランチ・夕食）</h3>
+        <p class="content-text">
+            <strong>ランチ（無添加）</strong><br>
+            • 単発：¥1,200<br>
+            • 月額：¥10,000<br><br>
+            
+            <strong>夕食（18:00提供、一汁一菜）</strong><br>
+            • 単発：¥1,600<br>
+            • 夕食含む延長：18:00–18:45（45分）3コマ換算
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">🕒 EXTENSION（延長）</h3>
+        <p class="content-text">
+            <strong>■ 時間帯別</strong><br>
+            • 17:30–18:00：¥600<br>
+            • 18:00–18:45（夕食含む）：¥1,600<br>
+            • 18:45–19:30：¥1,200<br><br>
+            
+            <strong>■ EXTENSION PASS</strong><br>
+            （延長をお得に利用できるコマ回数券）<br>
+            • 5コマ：¥2,750（¥550/コマ）<br>
+            • 10コマ：¥5,200（¥520/コマ）<br>
+            • 25コマ：¥12,500（¥500/コマ）
+        </p>
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">🎫 FLEX PASS（欠席時の振替金券）</h3>
+        <p class="content-text">
+            欠席1日につき <strong>¥4,000分</strong> 発行<br><br>
+            
+            <strong>使い道：</strong><br>
+            • 延長 / • 夕食 / • ランチ<br>
+            • Early Program / • 特別講座<br>
+            • 親子プログラム / • 海外プログラム<br>
+            • 兄弟利用OK<br>
+            • 翌年度授業料の20%まで充当可<br><br>
+            
+            <strong>未使用分</strong><br>
+            → 1枚 ¥2,000で換金可（年1回）<br>
+            期限1年間
+        </p>
+    </div>
+    
+    <div class="page-number">Page 22</div>
+</div>
+
+<!-- Page 23: Why Choose The Noble Academy -->
+<div class="page content-page">
+    <h2 class="page-title">Why Choose The Noble Academy?</h2>
+    <div class="accent-line"></div>
+    <p class="page-subtitle">なぜThe Noble Academyを選ぶのか</p>
+    
+    <div class="content-text">
+        日本には多くの学習塾や習い事がありますが、The Noble Academyは他のどこにもない唯一無二の存在です。
+    </div>
+    
+    <div class="highlight-box">
+        <h3 class="highlight-title">The Noble Academyを選ぶ10の理由</h3>
+        <p class="content-text">
+            • <strong>人格教育を最優先</strong> - 学力より人間力を重視<br>
+            • <strong>完全バイリンガル環境</strong> - 英語70%、中国語30%のイマージョン<br>
+            • <strong>100%オーガニック給食</strong> - 健康と食文化を大切に<br>
+            • <strong>IB型探究学習</strong> - 暗記ではなく思考力を育てる<br>
+            • <strong>本物の文化体験</strong> - 茶道、書道、クラシック音楽など<br>
+            • <strong>少人数制</strong> - 最大12名で一人ひとりを丁寧にサポート<br>
+            • <strong>世界との繋がり</strong> - 海外提携校との交流プログラム<br>
+            • <strong>家族参加型</strong> - 保護者も共に学び、成長できる環境<br>
+            • <strong>世界大学への道</strong> - トップ大学進学を見据えた教育<br>
+            • <strong>同じ価値観の仲間</strong> - 志の高い家族のコミュニティ
+        </p>
+    </div>
+    
+    <div class="content-text">
+        The Noble Academyは、「子どもの未来に本気で投資したい」と考えるご家族のための場所です。<br><br>
+        
+        私たちは、お子様がNoble Mind(気高い心)とNoble Life(品格ある人生)を手に入れ、世界のどこでも輝ける人財に育つことを約束します。
+    </div>
+    
+    <div class="page-number">Page 23</div>
+</div>
+
+<!-- Page 24: Ending Message -->
+<div class="page ending-page">
+    <h2 class="page-title" style="font-size: 3em; margin-top: 100px;">Welcome to Noble Family</h2>
+    <div class="accent-line"></div>
+    
+    <div class="content-text" style="font-size: 1.3em; line-height: 2.2;">
+        教育は、人生で最も大切な投資です。<br><br>
+        
+        私たちは、お子様に単なる知識や学力を与えるのではなく、<br>
+        「人として尊敬され、世界で活躍できる力」を育みます。<br><br>
+        
+        The Noble Academyで過ごす時間は、お子様の人生の基盤となります。<br>
+        ここで育まれる人格、教養、グローバル感覚は、<br>
+        どこに行っても、何をしていても、一生輝き続ける財産です。<br><br>
+        
+        私たちは、Noble Mind(気高い心)とNoble Life(品格ある人生)を持つ<br>
+        次世代リーダーを育てることに全力を尽くします。<br><br>
+        
+        あなたのご家族を、Nobleファミリーとしてお迎えできる日を、心よりお待ちしております。
+    </div>
+    
+    <div class="contact-box">
+        <h3 class="highlight-title">お問い合わせ</h3>
+        <p class="content-text" style="line-height: 2;">
+            <strong>THE NOBLE ACADEMY</strong><br>
+            〒104-0054 東京都中央区勝どき(予定)<br>
+            Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="650401080c16160c0a0b16250b0a0709000406040100081c4b0f15">[email&#160;protected]</a><br>
+            Tel: 03-XXXX-XXXX<br><br>
+            
+            <strong>説明会予約受付中!</strong><br>
+            ウェブサイト: www.nobleacademy.jp
+        </p>
+    </div>
+    
+    <div style="text-align: center; margin-top: 80px;">
+        <div style="font-size: 2em; color: #b8860b; margin-bottom: 20px;">♦️</div>
+        <div style="font-size: 2.5em; font-weight: bold; color: #1a1a1a; margin-bottom: 10px;">THE NOBLE ACADEMY</div>
+        <div style="font-size: 1.5em; font-style: italic; color: #666;">Noble Mind. Noble Life.</div>
+    </div>
+    
+    <div class="page-number">Page 24</div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
+
+</body>
+</html>
