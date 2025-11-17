@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE NOBLE ACADEMY - 完全版パンフレット</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.9;
+            color: #2c2c2c;
+            background: #f5f5f5;
+        }
+        
+        /* Page Structure */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 0;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            position: relative;
+            page-break-after: always;
+            overflow: hidden;
+        }
+        
+        .page-content {
+            padding: 50px 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Page Numbers */
+        .page-number {
+            position: absolute;
+            bottom: 30px;
+            right: 60px;
+            font-size: 0.9rem;
+            color: #999;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        /* Image Placeholder */
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.1rem;
+            margin: 30px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        
+        .image-placeholder.large {
+            height: 400px;
+        }
+        
+        .image-placeholder.small {
+            height: 200px;
+        }
+        
+        .image-placeholder.full {
+            height: 100%;
+            margin: 0;
+            border-radius: 0;
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+        }
+        
+        .cover-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 6px;
+            margin-bottom: 30px;
+            color: #d4af37;
+        }
+        
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: #d4af37;
+            margin-top: 60px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 2;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        
+        /* Divider */
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: #d4af37;
+            margin: 30px auto;
+        }
+        
+        .divider-left {
+            margin: 30px 0;
+        }
+        
+        /* Box Styles */
+        .info-box {
+            background: #f8f8f8;
+            padding: 30px;
+            border-left: 4px solid #d4af37;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box h3,
+        .highlight-box h4 {
+            color: #d4af37;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        th {
+            background: #1a1a2e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover {
+            background: #f8f8f8;
+        }
+        
+        /* Special Pages */
+        .dark-page {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+        
+        .dark-page h1,
+        .dark-page h2,
+        .dark-page h3 {
+            color: #d4af37;
+        }
+        
+        .dark-page p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+        
+        /* Accent Text */
+        .accent {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        strong {
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+        
+        /* English Text */
+        .en {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            color: #666;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1: COVER -->
+    <div class="page cover-page">
+        <div class="cover-content">
+            <h1 class="logo">THE NOBLE<br>ACADEMY</h1>
+            <p class="subtitle">JAPAN'S PREMIER ELITE EDUCATION<br>AFTER SCHOOL</p>
+            <div class="divider"></div>
+            <p class="tagline">Noble Mind. Noble Life.</p>
+        </div>
+    </div>
+
+    <!-- PAGE 2: INTRODUCTION -->
+    <div class="page">
+        <div class="page-content">
+            <div class="image-placeholder large">
+                【写真：子どもたちの笑顔、学びの風景】
+            </div>
+            
+            <h1>THE NOBLE ACADEMY</h1>
+            
+            <p class="en" style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">日本唯一の世界を導く人財養成アフタースクール</p>
+            
+            <div class="divider"></div>
+            
+            <p style="font-size: 1.15rem; line-height: 2.2;">
+                わが子の幸せを心から願う一流家庭が求めてきた<br>
+                <strong>「本物の人格教育 × 国際教養 × 一流文化 × 健康」</strong>。
+            </p>
+            
+            <p style="font-size: 1.15rem; line-height: 2.2;">
+                その全てを日本で初めて体系化し、形にしたのが<br>
+                <span class="accent" style="font-size: 1.3rem;">THE NOBLE ACADEMY</span> です。
+            </p>
+        </div>
+        <div class="page-number">02</div>
+    </div>
+
+    <!-- PAGE 3: FOUNDATION PHILOSOPHY -->
+    <div class="page">
+        <div class="page-content">
+            <h2 style="text-align: center; margin-top: 50px;">学力の先にある<br><span class="accent" style="font-size: 2.5rem;">"人間力"</span></h2>
+            
+            <p class="en" style="text-align: center; margin-bottom: 30px;">Character Power</p>
+            
+            <div class="divider"></div>
+            
+            <p style="text-align: center; font-size: 1.2rem; margin: 40px 0;">
+                これこそが、これからの時代を生き抜くための<br>
+                <strong class="accent">究極の資産</strong>です。
+            </p>
+            
+            <div class="image-placeholder">
+                【写真：一流の学び環境、子どもたちの活動風景】
+            </div>
+            
+            <div class="info-box">
+                <h4 style="text-align: center;">The Noble Academy が統合する6つの核</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 10px 0; font-size: 1.1rem;">• <strong>人格</strong></li>
+                    <li style="padding: 10px 0; font-size: 1.1rem;">• <strong>国際教養</strong></li>
+                    <li style="padding: 10px 0; font-size: 1.1rem;">• <strong>本物の食育</strong></li>
+                    <li style="padding: 10px 0; font-size: 1.1rem;">• <strong>一流体験</strong></li>
+                    <li style="padding: 10px 0; font-size: 1.1rem;">• <strong>探究・思考力（IB型思考）</strong></li>
+                    <li style="padding: 10px 0; font-size: 1.1rem;">• <strong>STEAM（未来の問題を解決する力）</strong></li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.15rem; margin-top: 40px;">
+                心・知性・感性・身体のすべてを育てる<br>
+                <strong class="accent">日本唯一のアフタースクール</strong>です。
+            </p>
+            
+            <p style="text-align: center; font-size: 1.15rem; margin-top: 30px;">
+                ここで育つのは、<br>
+                <strong>自ら未来を創造し、世界を導く力を備えた子どもたち。</strong>
+            </p>
+        </div>
+        <div class="page-number">03</div>
+    </div>
+
+    <!-- PAGE 4: FOUNDATION STORY Part 1 -->
+    <div class="page">
+        <div class="page-content">
+            <h1>「なぜ私は、<br>この学校を創ったのか」</h1>
+            
+            <p class="en" style="text-align: center; margin-bottom: 30px;">Foundation Story</p>
+            
+            <div class="divider"></div>
+            
+            <div class="image-placeholder">
+                【写真：創設者の想い、子どもたちを見守る様子】
+            </div>
+            
+            <p>
+                私は長年、子どもたちの教育や成長に関わる中で、どうしても目を背けられない<strong>"日本の教育の限界"</strong>を感じてきました。
+            </p>
+            
+            <p>
+                日本ではいまだに——
+            </p>
+            
+            <div class="info-box">
+                <p style="text-align: center; font-size: 1.1rem; margin: 0;">
+                    <strong>「正解を素早く出せる子」</strong><br>
+                    <strong>「従順で評価されやすい子」</strong>
+                </p>
+            </div>
+            
+            <p>
+                ——が "優秀" とされがちです。
+            </p>
+            
+            <p>
+                しかし、社会に出た瞬間に必要なのは<br>
+                そんな力ではありません。
+            </p>
+        </div>
+        <div class="page-number">04</div>
+    </div>
+
+    <!-- PAGE 5: FOUNDATION STORY Part 2 -->
+    <div class="page">
+        <div class="page-content">
+            <div class="highlight-box" style="margin-top: 50px;">
+                <h4 style="text-align: center; color: #d4af37; font-size: 1.4rem;">求められるのは——</h4>
+                <ul style="color: rgba(255,255,255,0.95); font-size: 1.05rem;">
+                    <li>自分で考える力</li>
+                    <li>人に好かれ、信頼される人間力</li>
+                    <li>創造力</li>
+                    <li>折れない心</li>
+                    <li>他者を受け入れる多様性・国際性</li>
+                    <li>心身の健康</li>
+                </ul>
+            </div>
+            
+            <p style="font-size: 1.15rem; margin-top: 30px;">
+                この<strong class="accent">"人としての核"</strong>を育てる教育は、<br>
+                残念ながらどこにも存在していませんでした。
+            </p>
+            
+            <h3 style="color: #d4af37;">目の前の子どもたちが疲弊していく姿に、胸が痛んだ</h3>
+            
+            <p>周囲の親御さんたちから聞こえてくる声は本当に深刻です。</p>
+            
+            <ul>
+                <li>好きなことをする時間がない</li>
+                <li>塾漬けで親子ともに勉強・受験へのプレッシャーがすごい</li>
+                <li>反抗期で親子関係が壊れる</li>
+                <li>英語に通わせても身につかない</li>
+                <li>心が追いつかず、無気力になる</li>
+            </ul>
+            
+            <div class="info-box">
+                <p style="text-align: center; font-size: 1.2rem; margin: 0;">
+                    「これは子どもの問題ではなく、<br>
+                    <strong class="accent">大人がつくる"環境"の問題だ。</strong>」
+                </p>
+            </div>
+            
+            <p>
+                どれだけ優秀な子でも、どれだけ賢くても、<br>
+                心と環境が整わなければ子どもは本来の力を発揮できません。
+            </p>
+        </div>
+        <div class="page-number">05</div>
+    </div>
+
+    <!-- PAGE 6: FOUNDATION STORY Part 3 -->
+    <div class="page">
+        <div class="page-content">
+            <h3 style="color: #d4af37; margin-top: 40px;">世界基準で考えると、日本の教育は "圧倒的に遅れている"</h3>
+            
+            <p>海外の一流家庭は、子どもの教育において絶対に妥協しません。</p>
+            
+            <div class="image-placeholder">
+                【写真：世界基準の教育、多様な学び】
+            </div>
+            
+            <div class="info-box">
+                <h4>世界の一流家庭が育てるもの</h4>
+                <ul>
+                    <li>人格</li>
+                    <li>探究心</li>
+                    <li>創造性</li>
+                    <li>語学</li>
+                    <li>リーダーシップ</li>
+                    <li>健康</li>
+                    <li>文化教養</li>
+                    <li>自然体験</li>
+                </ul>
+            </div>
+            
+            <p>
+                これらを<strong class="accent">"トータルで"</strong>育てるのが世界標準です。
+            </p>
+            
+            <p>
+                一方、日本ではまだ語学なら語学だけ、文化なら文化だけ。<br>
+                すべてが<strong>"切り離されたまま"</strong>です。
+            </p>
+            
+            <div class="highlight-box">
+                <p style="text-align: center; font-size: 1.3rem; color: #d4af37; margin: 0;">
+                    私は、世界基準の「統合教育」を創る人になろうと決めました。
+                </p>
+            </div>
+        </div>
+        <div class="page-number">06</div>
+    </div>
+
+    <!-- PAGE 7: FOUNDATION STORY Part 4 -->
+    <div class="page">
+        <div class="page-content">
+            <h3 style="color: #d4af37; margin-top: 40px;">「子どもたちの未来を守る場所」が必要だと確信した</h3>
+            
+            <p>時代はAIへと加速度的に進化しています。だからこそ——</p>
+            
+            <div class="info-box">
+                <p style="text-align: center; font-size: 1.2rem; margin: 0;">
+                    <strong class="accent">"人間にしかできない力"</strong> が<br>
+                    これまで以上に価値を持ちます。
+                </p>
+            </div>
+            
+            <ul style="font-size: 1.05rem;">
+                <li>共感力</li>
+                <li>創造力</li>
+                <li>対話力</li>
+                <li>挑戦する心</li>
+                <li>多角的に考える知性</li>
+                <li>文化を理解する深さ</li>
+                <li>人を幸せにする力</li>
+            </ul>
+            
+            <div class="image-placeholder">
+                【写真：子どもたちの真剣な表情、挑戦する姿】
+            </div>
+            
+            <p style="font-size: 1.15rem;">
+                これらは、机に向かうだけでは絶対に育ちません。
+            </p>
+            
+            <p style="font-size: 1.15rem;">
+                <strong>本物の環境、本物の人、本物の体験、そして本物の食</strong>があってはじめて育つ力です。
+            </p>
+        </div>
+        <div class="page-number">07</div>
+    </div>
+
+    <!-- PAGE 8: FOUNDATION STORY Final -->
+    <div class="page dark-page">
+        <div class="page-content">
+            <h2 style="text-align: center; margin-top: 80px;">「ないなら、私が創る」</h2>
+            
+            <div class="divider"></div>
+            
+            <p style="text-align: center; font-size: 1.15rem; margin: 40px 0;">
+                語学、IB探究、STEAM、文化、自然、<br>
+                そして食と健康を統合した<br>
+                <span class="accent" style="font-size: 1.4rem;">"世界に誇れる教育機関"</span> を創りたい。
+            </p>
+            
+            <p style="text-align: center; font-size: 1.15rem;">
+                心・知性・感性・身体を丸ごと育てる場をつくりたい。
+            </p>
+            
+            <p style="text-align: center; font-size: 1.15rem; margin-top: 40px;">
+                わが子に心から通わせたいと思える場所を、<br>
+                日本にひとつ創りたい。
+            </p>
+            
+            <div class="highlight-box" style="background: rgba(212, 175, 55, 0.15); border: 2px solid #d4af37; margin-top: 60px;">
+                <p style="text-align: center; font-size: 1.4rem; color: #d4af37; margin: 0; line-height: 2;">
+                    そうして誕生したのが<br>
+                    <strong style="font-size: 1.8rem;">THE NOBLE ACADEMY</strong> です。
+                </p>
+            </div>
+            
+            <h3 style="text-align: center; margin-top: 80px;">この学校で育つ子どもたちは、<br>未来の "創り手" になる</h3>
+            
+            <p style="text-align: center; font-size: 1.15rem; margin-top: 40px;">
+                あなたのお子さまが20歳になったとき、<br>
+                誇りを持ってこう言えるように。
+            </p>
+            
+            <p style="text-align: center; font-size: 1.3rem; color: #d4af37; margin-top: 30px; line-height: 2.2;">
+                「あのとき親が選んでくれた教育が、<br>
+                　私の人生を変えた。」
+            </p>
+            
+            <p style="text-align: center; font-size: 1.15rem; margin-top: 50px;">
+                その未来を信じて、<br>
+                私はこのアカデミーを創りました。
+            </p>
+        </div>
+        <div class="page-number" style="color: rgba(255,255,255,0.5);">08</div>
+    </div>
+
+    <!-- PAGE 9: WHY NOW? -->
+    <div class="page">
+        <div class="page-content">
+            <h1>WHY NOW?</h1>
+            
+            <p class="en" style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">なぜ今、人格教育が必要なのか</p>
+            
+            <div class="divider"></div>
+            
+            <div class="image-placeholder">
+                【写真：考える子ども、挑戦する姿、成長の瞬間】
+            </div>
+            
+            <p style="font-size: 1.1rem;">
+                受験競争は過熱し、塾漬けの小学生が増えています。
+            </p>
+            
+            <p style="font-size: 1.1rem;">一見すると：</p>
+            
+            <div class="info-box">
+                <ul style="font-size: 1.05rem;">
+                    <li>✓ 正解のある問題は解ける</li>
+                    <li>✓ 処理速度は速い</li>
+                    <li>✓ 指示されたことを忠実にこなせる</li>
+                </ul>
+            </div>
+            
+            <p style="font-size: 1.1rem; margin-top: 30px;">しかし社会に出ると——</p>
+            
+            <div class="info-box" style="background: #fff3e0; border-left-color: #ff9800;">
+                <ul style="font-size: 1.05rem;">
+                    <li>× 自分で考えられない</li>
+                    <li>× 挑戦できない</li>
+                    <li>× 失敗に弱い</li>
+                    <li>× 人に好かれない</li>
+                    <li>× メンタルが折れる</li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.3rem; color: #d4af37; margin-top: 50px; line-height: 2;">
+                <strong>"優秀"に見えて、生きる力が脆い。</strong>
+            </p>
+        </div>
+        <div class="page-number">09</div>
+    </div>
+
+    <!-- PAGE 10: THE FIVE PILLARS INTRO -->
+    <div class="page dark-page">
+        <div class="page-content">
+            <h1 style="margin-top: 100px;">THE FIVE PILLARS OF<br>NOBLE EDUCATION</h1>
+            
+            <div class="divider"></div>
+            
+            <p style="text-align: center; font-size: 1.3rem; margin-top: 50px; margin-bottom: 80px;">
+                The Noble Academy の５つの核
+            </p>
+            
+            <div style="text-align: center; margin-top: 100px;">
+                <div style="font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #d4af37; margin-bottom: 30px;">01 — 05</div>
+                <p style="font-size: 1.2rem;">人格 × 国際教養 × 食育 × 一流体験 × STEAM</p>
+            </div>
+        </div>
+        <div class="page-number" style="color: rgba(255,255,255,0.5);">10</div>
+    </div>
+
+    <!-- PAGE 11: PILLAR 01 - CHARACTER -->
+    <div class="page">
+        <div class="page-content">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: #d4af37; margin-bottom: 20px;">01</div>
+            
+            <h2>CHARACTER DEVELOPMENT</h2>
+            <p class="en" style="font-size: 1.2rem; margin-bottom: 30px;">人格教育</p>
+            
+            <div class="divider-left"></div>
+            
+            <div class="image-placeholder">
+                【写真：礼儀作法、マインドフルネス、子どもの真剣な表情】
+            </div>
+            
+            <p>AI時代に問われるのは、<strong class="accent">「人としての強さ × 優しさ × 信頼される力」</strong>。</p>
+            
+            <div class="info-box">
+                <h4>The Noble Academy で育む人格力</h4>
+                <ul>
+                    <li><strong>礼節</strong> — 相手を敬い、美しい所作で接する力</li>
+                    <li><strong>誠実さ</strong> — 自分に正直で、約束を守る力</li>
+                    <li><strong>集中力</strong> — 目の前のことに没頭する力</li>
+                    <li><strong>共感力</strong> — 他者の気持ちを理解し寄り添う力</li>
+                    <li><strong>自己管理力</strong> — 感情をコントロールし、目標に向かう力</li>
+                    <li><strong>レジリエンス</strong> — 困難から立ち直る心の回復力</li>
+                    <li><strong>マインドフルネス</strong> — 今この瞬間に集中する力</li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 40px;">
+                <strong class="accent">"一生折れない、しなやかでたくましい心"</strong><br>
+                を育てます。
+            </p>
+        </div>
+        <div class="page-number">11</div>
+    </div>
+
+    <!-- PAGE 12: PILLAR 02 - GLOBAL LITERACY -->
+    <div class="page">
+        <div class="page-content">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: #d4af37; margin-bottom: 20px;">02</div>
+            
+            <h2>GLOBAL LITERACY &<br>BILINGUAL MASTERY</h2>
+            <p class="en" style="font-size: 1.2rem; margin-bottom: 30px;">国際教養 × バイリンガル教育</p>
+            
+            <div class="divider-left"></div>
+            
+            <p>THE NOBLE ACADEMY は<strong class="accent">英語70% × 中国語30%</strong>の完全イマージョン。</p>
+            
+            <p>英語と中国語「で」学ぶ環境です。</p>
+            
+            <div class="image-placeholder">
+                【写真：バイリンガル授業、国際交流の様子】
+            </div>
+            
+            <div class="info-box">
+                <h4>6年間で目指す姿</h4>
+                <ul>
+                    <li><strong>英語：C1水準</strong> — アカデミック英語をネイティブレベルで運用</li>
+                    <li><strong>中国語：HSK4〜5相当</strong> — ビジネスレベルの会話力</li>
+                    <li><strong>探究・プレゼン・ディベートが２言語で可能</strong></li>
+                </ul>
+            </div>
+            
+            <p>さらに中学から<strong>ドイツ語またはフランス語</strong>を加え、The Noble Academy 卒業時には<span class="accent">日本語＋3言語（計4言語）</span>をネイティブレベルへ。</p>
+        </div>
+        <div class="page-number">12</div>
+    </div>
+
+    <!-- PAGE 13: PILLAR 03 - STEAM -->
+    <div class="page">
+        <div class="page-content">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: #d4af37; margin-bottom: 20px;">03</div>
+            
+            <h2>STEAM EDUCATION</h2>
+            <p class="en" style="font-size: 1.2rem; margin-bottom: 30px;">未来の問題を解決する力</p>
+            
+            <div class="divider-left"></div>
+            
+            <p>科学 × テクノロジー × 工学 × 芸術 × 数学 を統合し<br>
+            <strong class="accent">"未来を創る人材の脳"</strong>を育てる。</p>
+            
+            <div class="image-placeholder">
+                【写真：STEAM活動、科学実験、プロジェクト学習】
+            </div>
+            
+            <div class="info-box">
+                <h4>STEAMプログラム</h4>
+                <ul>
+                    <li><strong>Science</strong> — 週2回の科学実験、自然観察、Science Fair</li>
+                    <li><strong>Technology</strong> — プログラミング、デジタルリテラシー、AI体験</li>
+                    <li><strong>Engineering</strong> — レゴロボティクス、デザイン思考、発明プロジェクト</li>
+                    <li><strong>Arts</strong> — 絵画・工芸・陶芸、数学×アート、美術館学習</li>
+                    <li><strong>Math</strong> — 体験型アクティビティ、パズル・ゲーム</li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.15rem; margin-top: 40px;">
+                STEAMは単なる理科ではなく、<br>
+                <strong class="accent">未来を創る問題解決力そのもの。</strong>
+            </p>
+        </div>
+        <div class="page-number">13</div>
+    </div>
+
+    <!-- PAGE 14: PILLAR 04 - PREMIUM EXPERIENCES -->
+    <div class="page">
+        <div class="page-content">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: #d4af37; margin-bottom: 20px;">04</div>
+            
+            <h2>PREMIUM CULTURAL<br>EXPERIENCES</h2>
+            <p class="en" style="font-size: 1.2rem; margin-bottom: 30px;">一流文化体験</p>
+            
+            <div class="divider-left"></div>
+            
+            <p>子どもの感性が磨かれるのは「知識」ではなく<strong>"本物の経験"</strong>。</p>
+            
+            <div class="image-placeholder">
+                【写真：茶道、書道、一流ホテルでのマナー教育】
+            </div>
+            
+            <div class="info-box">
+                <h4>本物に触れる体験プログラム</h4>
+                <ul>
+                    <li><strong>日本文化</strong> — 茶道（裏千家）、書道、華道</li>
+                    <li><strong>一流のマナー</strong> — 一流ホテル・料亭でのマナー教育</li>
+                    <li><strong>芸術鑑賞</strong> — クラシック音楽、美術館、劇場</li>
+                    <li><strong>自然体験</strong> — 神社参拝、自然探究、里山探検</li>
+                    <li><strong>国際交流</strong> — 世界文化教室、Virtual Exchange</li>
+                </ul>
+            </div>
+            
+            <div class="image-placeholder small">
+                【写真：芸術鑑賞、自然体験の様子】
+            </div>
+            
+            <p style="text-align: center; font-size: 1.15rem; margin-top: 40px;">
+                <strong>一流の講師 × 一流の環境 × 一流の体験</strong><br>
+                で、"本物を体得した一流の人格" を育てます。
+            </p>
+        </div>
+        <div class="page-number">14</div>
+    </div>
+
+    <!-- PAGE 15: PILLAR 05 - FOOD EDUCATION -->
+    <div class="page">
+        <div class="page-content">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: #d4af37; margin-bottom: 20px;">05</div>
+            
+            <h2>AUTHENTIC FOOD<br>EDUCATION</h2>
+            <p class="en" style="font-size: 1.2rem; margin-bottom: 30px;">本物の食育 × 食養生</p>
+            
+            <div class="divider-left"></div>
+            
+            <p>人の体は食べたものでしかつくられない。<br>
+            どれほど高価なサプリでも体をつくってはくれません。</p>
+            
+            <div class="image-placeholder">
+                【写真：オーガニック食材、土鍋ごはん、美しい食卓】
+            </div>
+            
+            <div class="highlight-box">
+                <h4>すべて 100％オーガニック・無添加・手作り</h4>
+                <ul style="color: rgba(255,255,255,0.9);">
+                    <li>自然栽培分付き米（土鍋炊き）</li>
+                    <li>天然だしの一汁二菜</li>
+                    <li>旬野菜・天然魚（抗生物質、ホルモン剤不使用）</li>
+                    <li>自家製の梅干し・糠漬け・味噌</li>
+                    <li>白砂糖・添加物ゼロのおやつ</li>
+                </ul>
+            </div>
+            
+            <p>食卓の礼儀、美しい器、命への感謝──食を通して、内面の豊かさと品格を育てます。</p>
+            
+            <p style="font-size: 1.05rem; margin-top: 30px;">
+                忙しいご家庭のために、夕食の提供・ご家族分のテイクアウトにも対応。<br>
+                家庭の"毎日の健康"まで丸ごとサポートいたします。
+            </p>
+        </div>
+        <div class="page-number">15</div>
+    </div>
+
+    <!-- PAGE 16: GLOBAL NETWORK -->
+    <div class="page">
+        <div class="page-content">
+            <h1>GLOBAL NETWORK</h1>
+            
+            <p class="en" style="text-align: center; margin-bottom: 30px;">世界の教室が、勝どきとつながる</p>
+            
+            <div class="divider"></div>
+            
+            <div class="image-placeholder">
+                【写真：国際交流、オンライン授業の様子】
+            </div>
+            
+            <p>UWC / シンガポール名門校 / スイスのIB校 / 中国名門IB校 と連携。</p>
+            
+            <div class="info-box">
+                <h4>国際交流プログラム</h4>
+                <ul>
+                    <li><strong>毎月オンライン交流</strong> — 世界の子どもたちと英語・中国語で対話</li>
+                    <li><strong>年1回の相互訪問</strong> — 実際に海外パートナー校を訪問</li>
+                    <li><strong>サマー/ウィンタースクール</strong> — 海外名門校での短期留学</li>
+                    <li><strong>共同プロジェクト</strong> — 環境・国際課題を共に探究</li>
+                </ul>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 40px;">
+                世界基準の教育を、勝どきで受けられる。
+            </p>
+        </div>
+        <div class="page-number">16</div>
+    </div>
+
+    <!-- PAGE 17: WEEKLY SCHEDULE -->
+    <div class="page">
+        <div class="page-content">
+            <h1>WEEKLY SCHEDULE</h1>
+            
+            <p class="en" style="text-align: center; margin-bottom: 40px;">週間プログラム</p>
+            
+            <div class="divider"></div>
+            
+            <div class="info-box">
+                <h4>月｜STEAM DAY</h4>
+                <p>科学実験、ロボット、テック、数学ゲーム</p>
+            </div>
+            
+            <div class="info-box">
+                <h4>火｜GLOBAL LITERACY DAY</h4>
+                <p>World Explorer、ディスカッション、SDGs探究</p>
+            </div>
+            
+            <div class="info-box">
+                <h4>水｜ARTS & CULTURE DAY</h4>
+                <p>絵画、音楽、日本文化（茶道/書道/華道）</p>
+            </div>
+            
+            <div class="info-box">
+                <h4>木｜PHYSICAL & WELLNESS DAY</h4>
+                <p>スポーツ、ヨガ、自然探究、Cooking</p>
+            </div>
+            
+            <div class="info-box">
+                <h4>金｜PROJECT & PRESENTATION DAY</h4>
+                <p>探究プロジェクト、Show & Tell</p>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.1rem; margin-top: 40px;">
+                毎日が新しい発見、毎週が成長のサイクル。
+            </p>
+        </div>
+        <div class="page-number">17</div>
+    </div>
+
+    <!-- PAGE 18: OUTDOOR EDUCATION -->
+    <div class="page">
+        <div class="page-content">
+            <h1>OUTDOOR EDUCATION</h1>
+            
+            <div class="divider"></div>
+            
+            <div class="image-placeholder">
+                【写真：自然探究、アウトドア活動】
+            </div>
+            
+            <p>UWC／Aiglon／Le Rosey／Forest School が採用する<br>
+            本格アウトドア教育を勝どきで実践。</p>
+            
+            <div class="info-box">
+                <h4>アウトドアプログラム</h4>
+                <ul>
+                    <li>自然観察・街の探究</li>
+                    <li>環境学習</li>
+                    <li>チームビルディング</li>
+                    <li>サバイバル体験（年3回宿泊）</li>
+                </ul>
+            </div>
+            
+            <p style="font-size: 1.1rem; margin-top: 30px;">
+                自然の中で育つのは、<strong class="accent">生きる力</strong>と<strong class="accent">仲間との絆</strong>。
+            </p>
+        </div>
+        <div class="page-number">18</div>
+    </div>
+
+    <!-- PAGE 19: PARENT-CHILD PROGRAM -->
+    <div class="page">
+        <div class="page-content">
+            <h1>PARENT–CHILD<br>PROGRAM</h1>
+            
+            <p class="en" style="text-align: center; margin-bottom: 30px;">親子食育（季節の手仕事）</p>
+            
+            <div class="divider"></div>
+            
+            <div class="image-placeholder">
+                【写真：親子で料理、季節の手仕事】
+            </div>
+            
+            <div class="info-box">
+                <h4>季節の手仕事プログラム</h4>
+                <ul>
+                    <li>味噌づくり</li>
+                    <li>梅干しづくり</li>
+                    <li>桜餅・柏餅</li>
+                    <li>おせち料理</li>
+                    <li>季節の食養料理</li>
+                </ul>
+            </div>
+            
+            <p style="font-size: 1.1rem; line-height: 2; margin-top: 30px;">
+                家庭の味を親子で紡ぐことは、健康だけでなく<br>
+                <strong class="accent">「この家に生まれてよかった」</strong>と思える<br>
+                一生ものの土台になります。
+            </p>
+        </div>
+        <div class="page-number">19</div>
+    </div>
+
+    <!-- PAGE 20: TUITION & FEES -->
+    <div class="page">
+        <div class="page-content">
+            <h1>TUITION & FEES</h1>
+            
+            <p class="en" style="text-align: center; margin-bottom: 40px;">授業料</p>
+            
+            <div class="divider"></div>
+            
+            <h3>Core Program（14:30–17:30）</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>コース</th>
+                        <th>月額</th>
+                        <th>半年一括</th>
+                        <th>年間一括</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>週3回</td>
+                        <td>112,000円</td>
+                        <td>610,000円</td>
+                        <td>1,210,000円</td>
+                    </tr>
+                    <tr>
+                        <td>週4回</td>
+                        <td>138,000円</td>
+                        <td>750,000円</td>
+                        <td>1,490,000円</td>
+                    </tr>
+                    <tr>
+                        <td>週5回</td>
+                        <td>162,000円</td>
+                        <td>880,000円</td>
+                        <td>1,740,000円</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p style="font-size: 0.95rem; color: #666; margin-top: 10px;">
+                ※英語75%／中国語25%、STEAM・IB・文化・Outdoorを含む
+            </p>
+            
+            <h3 style="margin-top: 50px;">MEALS（食事）</h3>
+            
+            <div class="info-box">
+                <p><strong>🍙 ランチ（無添加）</strong></p>
+                <p>単発：1,200円　｜　月額：10,000円</p>
+                
+                <p style="margin-top: 20px;"><strong>🍚 夕食（18:00）</strong></p>
+                <p>単発：1,600円</p>
+            </div>
+        </div>
+        <div class="page-number">20</div>
+    </div>
+
+    <!-- PAGE 21: EXTENSION & FLEX PASS -->
+    <div class="page">
+        <div class="page-content">
+            <h2>EXTENSION（延長）</h2>
+            
+            <div class="info-box">
+                <p><strong>① 17:30–18:00（30分）</strong></p>
+                <p>単発：1,000円　｜　PASS：1コマ</p>
+                
+                <p style="margin-top: 15px;"><strong>② 18:00–18:45（夕食付）</strong></p>
+                <p>単発：3,000円　｜　PASS：3コマ</p>
+                <p>夕食なし：1,800円　｜　2コマ</p>
+                
+                <p style="margin-top: 15px;"><strong>③ 18:45–19:30（ナイトケア）</strong></p>
+                <p>単発：1,800円　｜　PASS：2コマ</p>
+            </div>
+            
+            <h4>PASS（有効1年）</h4>
+            <ul>
+                <li>5コマ：4,500円</li>
+                <li>10コマ：8,000円</li>
+                <li>25コマ：18,750円</li>
+            </ul>
+            
+            <p style="font-size: 0.95rem; color: #666;">未使用：翌年度授業料に充当（1コマ700円換算）</p>
+            
+            <h2 style="margin-top: 50px;">FLEX PASS</h2>
+            
+            <div class="highlight-box">
+                <p style="font-size: 1.2rem; color: #d4af37; margin-bottom: 20px;">
+                    <strong>欠席1日につき 4,000円分 の金券発行</strong>
+                </p>
+                <p style="color: rgba(255,255,255,0.9);">使えるもの：</p>
+                <ul style="color: rgba(255,255,255,0.9);">
+                    <li>延長</li>
+                    <li>ランチ・夕食</li>
+                    <li>Early Program</li>
+                    <li>親子講座</li>
+                    <li>海外プログラム</li>
+                    <li>翌年度授業料（20%まで）</li>
+                    <li>兄弟も利用可</li>
+                </ul>
+                <p style="color: rgba(255,255,255,0.9); margin-top: 15px;">
+                    未使用分 → 2,000円で換金可（年1回）
+                </p>
+            </div>
+        </div>
+        <div class="page-number">21</div>
+    </div>
+
+    <!-- PAGE 22: ADMISSION GUIDE -->
+    <div class="page dark-page">
+        <div class="page-content">
+            <h1 style="margin-top: 80px;">ADMISSION GUIDE</h1>
+            
+            <p class="en" style="text-align: center; margin-bottom: 40px;">入会案内</p>
+            
+            <div class="divider"></div>
+            
+            <div class="info-box" style="background: rgba(255,255,255,0.1); border-left-color: #d4af37;">
+                <ul style="color: rgba(255,255,255,0.9); font-size: 1.1rem; list-style: none; padding: 0;">
+                    <li style="padding: 10px 0;">● 対象：小学1〜3年生</li>
+                    <li style="padding: 10px 0;">● 定員：15名</li>
+                    <li style="padding: 10px 0;">● 開校：2026年9月</li>
+                    <li style="padding: 10px 0;">● 場所：勝どき・晴海エリア</li>
+                </ul>
+            </div>
+            
+            <h3 style="margin-top: 60px; text-align: center;">入会金 & 送迎費</h3>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-size: 1.3rem; color: #d4af37;">入会金：150,000円</p>
+                <p style="font-size: 1.3rem; color: #d4af37; margin-top: 20px;">送迎費：月20,000円</p>
+            </div>
+            
+            <div style="margin-top: 80px; text-align: center;">
+                <h3 style="color: #d4af37;">まずは体験説明会へ</h3>
+                <p style="font-size: 1.1rem; margin-top: 30px;">
+                    WEB予約 → 個別相談 → お子さま体験<br>
+                    <span style="color: #d4af37;">当日特典あり</span>
+                </p>
+            </div>
+        </div>
+        <div class="page-number" style="color: rgba(255,255,255,0.5);">22</div>
+    </div>
+
+    <!-- PAGE 23: FINAL MESSAGE -->
+    <div class="page">
+        <div class="page-content">
+            <h1 style="margin-top: 100px;">YOUR DECISION<br>CHANGES<br>THEIR FUTURE</h1>
+            
+            <div class="divider"></div>
+            
+            <div class="image-placeholder">
+                【写真：希望に満ちた子どもたちの未来】
+            </div>
+            
+            <div class="highlight-box" style="margin-top: 50px;">
+                <p style="text-align: center; font-size: 1.4rem; color: #d4af37; line-height: 2.2; margin: 0;">
+                    「お子さまが20歳になったとき——<br><br>
+                    『あの時、親が選んでくれた教育のおかげで<br>
+                    今の自分がある』<br><br>
+                    そう言ってもらえる選択をしませんか？」
+                </p>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.3rem; margin-top: 60px; line-height: 2.2;">
+                あなたの<strong class="accent">"決断"</strong>が、<br>
+                お子さまの未来を変えます。
+            </p>
+            
+            <div style="margin-top: 80px; text-align: center;">
+                <h2 style="color: #1a1a2e;">THE NOBLE ACADEMY</h2>
+                <p style="font-size: 1.1rem; margin-top: 20px;">勝どき / 晴海エリア</p>
+                <p style="font-size: 1.1rem; color: #d4af37; margin-top: 10px;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b434e4747446b5f434e454449474e4a484a4f4e465205415b">[email&#160;protected]</a></p>
+            </div>
+            
+            <p style="text-align: center; font-size: 1.1rem; margin-top: 60px; color: #999;">
+                <em>Noble Mind. Noble Life.</em>
+            </p>
+        </div>
+        <div class="page-number">23</div>
+    </div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
