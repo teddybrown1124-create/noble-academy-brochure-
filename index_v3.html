@@ -1,1 +1,1817 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE NOBLE ACADEMY - Japan's Premier Elite Education After School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --navy: #1a2332;
+            --gold: #c9a961;
+            --ivory: #f8f6f1;
+            --dark-gray: #2c2c2c;
+        }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--dark-gray);
+            background-color: var(--ivory);
+            line-height: 1.8;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 35, 50, 0.65), rgba(26, 35, 50, 0.65)),
+                        url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(transparent, var(--ivory));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title-en {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle-en {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 3rem;
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        .hero-title-ja {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--gold);
+            margin-bottom: 3rem;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description-main {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            color: var(--gold);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background-color: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background-color: #d4b870;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 169, 97, 0.5);
+        }
+
+        /* Section Base Styles */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--navy);
+            letter-spacing: 0.05em;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+        }
+
+        /* Why Now Section */
+        .why-now {
+            background-color: white;
+            padding: 100px 40px;
+        }
+
+        .why-now-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-now h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 3rem;
+        }
+
+        .why-now p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .problem-box {
+            background-color: #f9f9f9;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-left: 4px solid var(--gold);
+        }
+
+        .problem-box ul {
+            list-style: none;
+            text-align: left;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .problem-box li {
+            padding: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .problem-box li::before {
+            content: '×';
+            position: absolute;
+            left: 0;
+            color: #c9a961;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .highlight-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            background-color: var(--ivory);
+            border-radius: 10px;
+        }
+
+        /* Entrance Exams Section */
+        .entrance-exams {
+            background: linear-gradient(135deg, #1a2332 0%, #2a3f5f 100%);
+            color: white;
+            padding: 100px 40px;
+        }
+
+        .entrance-exams .section-title {
+            color: white;
+        }
+
+        .entrance-exams .section-title::after {
+            background-color: var(--gold);
+        }
+
+        .entrance-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .entrance-content p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .criteria-list {
+            list-style: none;
+            text-align: left;
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .criteria-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .criteria-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .emphasis-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: 10px;
+        }
+
+        /* After Exam Section */
+        .after-exam {
+            background-color: white;
+            padding: 100px 40px;
+        }
+
+        .after-exam-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .comparison-card {
+            padding: 2.5rem;
+            border-radius: 10px;
+        }
+
+        .comparison-card.negative {
+            background-color: #f5f5f5;
+            border-left: 4px solid #999;
+        }
+
+        .comparison-card.positive {
+            background-color: #f8f6f1;
+            border-left: 4px solid var(--gold);
+        }
+
+        .comparison-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .comparison-card ul {
+            list-style: none;
+        }
+
+        .comparison-card li {
+            padding: 0.7rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .comparison-card.negative li::before {
+            content: '×';
+            position: absolute;
+            left: 0;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .comparison-card.positive li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .mission-statement {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 4rem 0 2rem;
+            padding: 2rem;
+            background-color: var(--ivory);
+            border-radius: 10px;
+        }
+
+        /* Noble Education Section */
+        .noble-education {
+            background: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            padding: 120px 40px;
+        }
+
+        .noble-education::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 35, 50, 0.85);
+        }
+
+        .noble-education-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .noble-education .section-title {
+            color: white;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .pillar-item {
+            background-color: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .pillar-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(201, 169, 97, 0.2);
+        }
+
+        .pillar-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .pillar-item p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Five Pillars Section */
+        .five-pillars {
+            background-color: white;
+            padding: 100px 40px;
+        }
+
+        .pillar-detail {
+            max-width: 1000px;
+            margin: 5rem auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .pillar-detail:nth-child(even) {
+            direction: rtl;
+        }
+
+        .pillar-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .pillar-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .pillar-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .pillar-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-subtitle {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .pillar-text p {
+            font-size: 1.05rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Weekly Schedule Section */
+        .weekly-schedule {
+            background-color: var(--ivory);
+            padding: 100px 40px;
+        }
+
+        .schedule-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .schedule-day {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .schedule-day:hover {
+            transform: translateX(10px);
+        }
+
+        .schedule-day h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .schedule-day p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .schedule-footer {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-top: 3rem;
+            font-style: italic;
+        }
+
+        /* Weekend & Parent-Child Section */
+        .weekend-program {
+            background: linear-gradient(rgba(26, 35, 50, 0.7), rgba(26, 35, 50, 0.7)),
+                        url('https://images.unsplash.com/photo-1440342359743-84fcb8c21f21?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 40px;
+            color: white;
+        }
+
+        .weekend-program .section-title {
+            color: white;
+        }
+
+        .weekend-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .weekend-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin: 3rem 0 2rem;
+        }
+
+        .weekend-content p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .activity-list {
+            list-style: none;
+            text-align: left;
+            max-width: 700px;
+            margin: 3rem auto;
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        .activity-list li {
+            padding: 0.7rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            break-inside: avoid;
+        }
+
+        .activity-list li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Parent-Child Program */
+        .parent-child {
+            background-color: white;
+            padding: 100px 40px;
+        }
+
+        .parent-child-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .parent-child-content p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .parent-child h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--navy);
+            margin: 3rem 0 2rem;
+        }
+
+        .food-activity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .food-activity-card {
+            background-color: var(--ivory);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .food-activity-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-activity-card h4 {
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Global Network Section */
+        .global-network {
+            background-color: var(--navy);
+            color: white;
+            padding: 100px 40px;
+        }
+
+        .global-network .section-title {
+            color: white;
+        }
+
+        .global-network-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .global-network-content p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .network-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .network-feature {
+            background-color: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .network-feature h4 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* Comparison Table Section */
+        .comparison-table {
+            background-color: white;
+            padding: 100px 40px;
+        }
+
+        .comparison-intro {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .comparison-intro h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .comparison-intro p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+        }
+
+        .table-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        thead {
+            background-color: var(--navy);
+            color: white;
+        }
+
+        th {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        td:first-child {
+            color: #666;
+        }
+
+        td:last-child {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .table-note {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            padding: 2rem;
+            background-color: var(--ivory);
+            border-left: 4px solid var(--gold);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Outcomes Section */
+        .outcomes {
+            background: linear-gradient(135deg, #1e3a2e 0%, #2a5042 100%);
+            color: white;
+            padding: 100px 40px;
+        }
+
+        .outcomes .section-title {
+            color: white;
+        }
+
+        .outcomes-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .outcomes-content p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            text-align: left;
+            margin: 3rem auto;
+            padding: 0;
+        }
+
+        .outcomes-list li {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .outcomes-list li::before {
+            content: '★';
+            position: absolute;
+            left: 1rem;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        /* Foundation Story Section */
+        .foundation-story {
+            background-color: white;
+            padding: 100px 40px;
+        }
+
+        .foundation-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .foundation-content p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .vision-list {
+            list-style: none;
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background-color: var(--ivory);
+            border-radius: 10px;
+        }
+
+        .vision-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .vision-list li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .founder-quote {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy);
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: var(--ivory);
+            border-radius: 10px;
+            font-style: italic;
+        }
+
+        /* Founder Profile Section */
+        .founder-profile {
+            background-color: var(--ivory);
+            padding: 100px 40px;
+        }
+
+        .founder-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .founder-image-container {
+            text-align: center;
+        }
+
+        .founder-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .founder-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-title {
+            font-size: 1rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .founder-bio {
+            font-size: 1.05rem;
+            line-height: 2;
+        }
+
+        .founder-bio p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Admission Guide Section */
+        .admission-guide {
+            background-color: white;
+            padding: 100px 40px;
+        }
+
+        .admission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .admission-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .admission-card {
+            background-color: var(--ivory);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .admission-card h4 {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .admission-card p {
+            font-size: 1.3rem;
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .admission-note {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(rgba(26, 35, 50, 0.9), rgba(26, 35, 50, 0.9)),
+                        url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+        }
+
+        .final-cta-message {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 3rem;
+        }
+
+        .final-cta-emphasis {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin: 3rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: white;
+            padding: 60px 40px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .footer-location {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+
+        .footer-contact {
+            font-size: 1rem;
+            color: var(--gold);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .footer-contact:hover {
+            text-decoration: underline;
+        }
+
+        .footer-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 2rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pillar-detail {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .founder-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero-title-en {
+                font-size: 2.2rem;
+            }
+
+            .hero-title-ja {
+                font-size: 1.8rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .network-features {
+                grid-template-columns: 1fr;
+            }
+
+            .food-activity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .activity-list {
+                columns: 1;
+            }
+
+            .admission-details {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 2.5rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 1rem;
+            }
+        }
+
+        /* Scroll Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title-en">THE NOBLE ACADEMY</h1>
+            <p class="hero-subtitle-en">JAPAN'S PREMIER ELITE EDUCATION AFTER SCHOOL</p>
+            
+            <h2 class="hero-title-ja">日本唯一の<br>世界を導く人財育成アフタースクール</h2>
+            
+            <p class="hero-tagline">Noble Mind. Noble Life.</p>
+            
+            <div class="hero-description">
+                わが子の幸せを心から願う一流家庭が求めてきた、<br>
+            </div>
+            
+            <div class="hero-description-main">
+                「本物の人格教育 × 国際教養 × 一流文化 × 健康」
+            </div>
+            
+            <p class="hero-description">
+                そのすべてを、日本で初めて体系化し、形にしたのが<br>
+                <strong>THE NOBLE ACADEMY</strong> です。
+            </p>
+            
+            <a href="/cdn-cgi/l/email-protection#62060d0e0e4c071607100c030e0e0d140722050f030b0e4c010d0f" class="cta-button">体験説明会・個別相談に申し込む</a>
+        </div>
+    </section>
+
+    <!-- WHY NOW SECTION -->
+    <section class="why-now">
+        <div class="why-now-content">
+            <h2 class="section-title">なぜ今、「人格教育」が必須なのか</h2>
+            
+            <p>受験競争は過熱し、塾漬けの子どもが増えています。</p>
+            
+            <div class="problem-box">
+                <p style="font-weight: 600; margin-bottom: 1.5rem;">一見すると——</p>
+                <ul>
+                    <li>正解のある問題は解ける</li>
+                    <li>処理速度は速い</li>
+                    <li>指示されたことを忠実にこなせる</li>
+                </ul>
+                
+                <p style="font-weight: 600; margin: 2.5rem 0 1.5rem;">しかし社会に出ると——</p>
+                <ul>
+                    <li>自分で考えられない</li>
+                    <li>挑戦できない</li>
+                    <li>失敗に弱い</li>
+                    <li>人に好かれない</li>
+                    <li>メンタルが折れやすい</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-text">
+                「優秀に見えて、"生きる力"が脆い。」<br>
+                これが、今の日本の子どもたちの現実です。
+            </div>
+            
+            <p style="margin-top: 3rem; font-size: 1.2rem;">
+                そして今、もうひとつ確実に起きている変化があります。
+            </p>
+        </div>
+    </section>
+
+    <!-- ENTRANCE EXAMS SECTION -->
+    <section class="entrance-exams">
+        <div class="entrance-content">
+            <h2 class="section-title">入試は、すでに"人間力シフト"している</h2>
+            
+            <p>東大をはじめとする難関大学は、<strong>IB入試・推薦入試・総合型選抜</strong>の比重を年々高めています。</p>
+            
+            <p>広尾学園などの一流中高も、<strong>自己推薦・探究・プレゼン・ポートフォリオ</strong>を正面から評価する入試へ舵を切っています。</p>
+            
+            <p>これから増えていくのは、「偏差値が高い子」だけを評価する学校ではありません。</p>
+            
+            <ul class="criteria-list">
+                <li>何を探究してきたか</li>
+                <li>どんな価値観を持っているか</li>
+                <li>他者とどう協働してきたか</li>
+                <li>社会にどう貢献したいか</li>
+            </ul>
+            
+            <p><strong>"人格 × 探究 × 創造性"</strong> を問う学校が、一流校を中心に、今後さらに増えていきます。</p>
+            
+            <div class="emphasis-text">
+                受験勉強"だけ"で勝てる時代は、<br>確実に終わりつつあります。
+            </div>
+        </div>
+    </section>
+
+    <!-- AFTER THE EXAM SECTION -->
+    <section class="after-exam">
+        <div class="after-exam-content">
+            <h2 class="section-title">「受かった後」に、決定的な差がつく</h2>
+            
+            <p style="text-align: center; font-size: 1.1rem; line-height: 2; margin-bottom: 3rem;">
+                受験勉強"だけ"に追い込まれた子どもは、合格した瞬間にこうなりがちです。
+            </p>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card negative">
+                    <h3>受験"だけ"で育った子</h3>
+                    <ul>
+                        <li>受験が終わったら燃え尽きる</li>
+                        <li>「もう頑張らなくていい」と勉強から離れる</li>
+                        <li>自分で目標を立てられない</li>
+                    </ul>
+                    <p style="margin-top: 2rem; font-weight: 600; color: #666;">
+                        合格した瞬間が"ゴール"になってしまう。
+                    </p>
+                </div>
+                
+                <div class="comparison-card positive">
+                    <h3>人格力の高い子</h3>
+                    <ul>
+                        <li>偏差値だけで学校を選ばない</li>
+                        <li>自分の「好き」「得意」「将来やりたいこと」と学校の教育を照らし合わせ、自分の意思で選ぶ</li>
+                        <li>「入学してから、ここで何を成し遂げるか」を考え始める</li>
+                    </ul>
+                    <p style="margin-top: 2rem; font-weight: 600; color: var(--navy);">
+                        入った瞬間からがスタートになり、周りと比べものにならない"伸びしろ"を発揮していく。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mission-statement">
+                The Noble Academy が育てたいのは、<br>
+                「合格する子」ではなく、「合格した後に伸び続ける子」。<br><br>
+                ここが、偏差値一辺倒の教育との決定的な違いです。
+            </div>
+        </div>
+    </section>
+
+    <!-- NOBLE EDUCATION SECTION -->
+    <section class="noble-education">
+        <div class="noble-education-content">
+            <h2 class="section-title">The Noble Academy が統合する6つの核</h2>
+            
+            <div class="pillars-grid">
+                <div class="pillar-item">
+                    <h3>CHARACTER</h3>
+                    <p>人格</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>GLOBAL LITERACY</h3>
+                    <p>国際教養</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>AUTHENTIC FOOD</h3>
+                    <p>本物の食育</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>PREMIUM CULTURE</h3>
+                    <p>一流体験</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>INQUIRY</h3>
+                    <p>探究・思考力（IB型思考）</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>STEAM</h3>
+                    <p>未来の問題を解決する力</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.2rem; line-height: 2; margin-top: 3rem;">
+                心・知性・感性・身体のすべてを育てる、<br>
+                <strong style="color: var(--gold);">日本唯一の統合型アフタースクール</strong>です。
+            </p>
+            
+            <p style="font-size: 1.3rem; line-height: 2; margin-top: 2rem;">
+                ここで育つのは、<br>
+                <strong style="color: var(--gold);">自ら未来を創造し、世界を導く力を備えた子どもたち。</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- FIVE PILLARS DETAILED SECTION -->
+    <section class="five-pillars">
+        <h2 class="section-title">5つの柱</h2>
+        
+        <div class="pillar-detail">
+            <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=800&q=80" alt="Character Development" class="pillar-image">
+            <div class="pillar-text">
+                <div class="pillar-number">01</div>
+                <h3>CHARACTER DEVELOPMENT</h3>
+                <p class="pillar-subtitle">人格教育</p>
+                <p>礼節・誠実さ・集中力・共感力・自己管理・レジリエンス・マインドフルネス。</p>
+                <p><strong>「一生折れない、しなやかでたくましい心」</strong>を育みます。</p>
+            </div>
+        </div>
+
+        <div class="pillar-detail">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Global Literacy" class="pillar-image">
+            <div class="pillar-text">
+                <div class="pillar-number">02</div>
+                <h3>GLOBAL LITERACY & BILINGUAL MASTERY</h3>
+                <p class="pillar-subtitle">国際教養 × バイリンガル教育</p>
+                <p>英語70% × 中国語30% のイマージョン環境。<br>
+                「英語と中国語"を"学ぶ」のではなく、<strong>英語と中国語"で"学ぶ</strong>6年間。</p>
+                <p>卒業時には、<strong>日本語＋3言語（計4言語）で世界と渡り合える力</strong>を目指します。</p>
+            </div>
+        </div>
+
+        <div class="pillar-detail">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="STEAM Education" class="pillar-image">
+            <div class="pillar-text">
+                <div class="pillar-number">03</div>
+                <h3>STEAM EDUCATION</h3>
+                <p class="pillar-subtitle">未来の問題を解決する力</p>
+                <p>科学・テクノロジー・工学・芸術・数学を統合し、<strong>「未来を創る問題解決力」</strong>を育成。</p>
+                <p>実験・ロボティクス・プログラミング・アート・数学ゲーム。<br>
+                知識ではなく、<strong>「自分の頭で考え、形にする力」</strong>にフォーカスします。</p>
+            </div>
+        </div>
+
+        <div class="pillar-detail">
+            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&q=80" alt="Premium Cultural Experiences" class="pillar-image">
+            <div class="pillar-text">
+                <div class="pillar-number">04</div>
+                <h3>PREMIUM CULTURAL EXPERIENCES</h3>
+                <p class="pillar-subtitle">一流文化体験</p>
+                <p>茶道・書道・華道、一流ホテル・料亭でのマナー、クラシック音楽・美術館・劇場、神社参拝・里山体験…。</p>
+                <p><strong>一流の講師 × 一流の環境 × 一流の体験</strong>で、「本物を体得した一流の人格」を育みます。</p>
+            </div>
+        </div>
+
+        <div class="pillar-detail">
+            <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&q=80" alt="Authentic Food Education" class="pillar-image">
+            <div class="pillar-text">
+                <div class="pillar-number">05</div>
+                <h3>AUTHENTIC FOOD EDUCATION</h3>
+                <p class="pillar-subtitle">本物の食育 × 食養生</p>
+                <p>人の体は、食べたものでしかつくられません。</p>
+                <p>自然栽培の分づき米（土鍋炊き）・天然だしの一汁二菜・旬野菜・天然魚・自家製の梅干し・糠漬け・味噌・白砂糖・添加物ゼロ。</p>
+                <p><strong>"体と心が育つ食卓"</strong>を、毎日の放課後に。</p>
+                <p style="margin-top: 1.5rem; font-size: 0.95rem; line-height: 1.8;">
+                    東京都のデータでは、6歳までに約2人に1人の子どもがアレルギーを持つ時代。病気や軽度の障害を持つ子どもも年々増えています。
+                    添加物の種類、農薬使用量、寝たきり老人数、若者の死因TOPが自殺——これらは日本が「世界で一位」のものです。
+                    だからこそ、幼少期の食が<strong>心・体・未来</strong>を左右すると考えています。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEEKLY SCHEDULE SECTION -->
+    <section class="weekly-schedule">
+        <h2 class="section-title">こんな1週間を過ごします</h2>
+        
+        <div class="schedule-grid">
+            <div class="schedule-day">
+                <h3>MON｜English Immersion × Character</h3>
+                <p>英語イマージョン × 感情語彙 × 礼節・姿勢・集中トレーニング × パークタイム</p>
+            </div>
+            
+            <div class="schedule-day">
+                <h3>TUE｜Global STEAM</h3>
+                <p>英語で学ぶSTEAM：ロボティクス・プログラミング・サイエンス探究</p>
+            </div>
+            
+            <div class="schedule-day">
+                <h3>WED｜Chinese × Culture Arts</h3>
+                <p>中国語ネイティブ講師 × 日本文化（書道・茶道）× 世界文化</p>
+            </div>
+            
+            <div class="schedule-day">
+                <h3>THU｜English Literacy × Inquiry</h3>
+                <p>英語読書 × 世界のニュース × IB型「問い立て」× 書く力</p>
+            </div>
+            
+            <div class="schedule-day">
+                <h3>FRI｜Presentation × Debate</h3>
+                <p>英語・中国語でのプレゼン／スピーチ／ディベート × 週次リフレクション</p>
+            </div>
+        </div>
+        
+        <p class="schedule-footer">毎日が新しい発見、毎週が成長のサイクル。</p>
+    </section>
+
+    <!-- WEEKEND PROGRAM SECTION -->
+    <section class="weekend-program">
+        <div class="weekend-content">
+            <h2 class="section-title">週末特別プログラム</h2>
+            
+            <h3>OUTDOOR EDUCATION｜自然教育</h3>
+            
+            <p>UWC／Aiglon／Le Rosey／Forest School が採用する本格的なアウトドア体験を、</p>
+            <p>都内の自然豊かな公園や軽井沢の大自然の中で実践します。</p>
+            
+            <ul class="activity-list">
+                <li>自然観察・街の探究</li>
+                <li>環境学習</li>
+                <li>チームビルディング</li>
+                <li>農業体験</li>
+                <li>サバイバル体験</li>
+            </ul>
+            
+            <p style="font-size: 1.3rem; margin-top: 3rem;">
+                自然の中で育つのは、<br>
+                <strong style="color: var(--gold);">「生きる力」と「仲間との絆」。</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- PARENT-CHILD PROGRAM SECTION -->
+    <section class="parent-child">
+        <div class="parent-child-content">
+            <h2 class="section-title">親子食育（季節の手仕事）</h2>
+            
+            <p>人の体は、食べたものでしかつくられません。<br>
+            どれほど高価なサプリメントでも、どれほど希少な薬でも、"体" をつくることはできません。</p>
+            
+            <h3>親子で料理、季節の手仕事</h3>
+            
+            <div class="food-activity-grid">
+                <div class="food-activity-card">
+                    <h4>味噌づくり</h4>
+                </div>
+                <div class="food-activity-card">
+                    <h4>梅干しづくり</h4>
+                </div>
+                <div class="food-activity-card">
+                    <h4>ひな祭り・こどもの日の伝統料理</h4>
+                </div>
+                <div class="food-activity-card">
+                    <h4>おせち料理</h4>
+                </div>
+                <div class="food-activity-card">
+                    <h4>季節の食養料理</h4>
+                </div>
+                <div class="food-activity-card">
+                    <h4>クリスマスケーキ　他</h4>
+                </div>
+            </div>
+            
+            <div class="highlight-text">
+                「この家に生まれてよかった」と思える一生ものの土台を、<br>
+                親子で一緒に育みます。
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL NETWORK SECTION -->
+    <section class="global-network">
+        <div class="global-network-content">
+            <h2 class="section-title">世界の教室が、勝どきとつながる</h2>
+            
+            <p>UWC / シンガポール名門校 / スイスのIB校 / 中国名門IB校 と連携した、<br>
+            <strong style="color: var(--gold);">本物の国際交流プログラム。</strong></p>
+            
+            <div class="network-features">
+                <div class="network-feature">
+                    <h4>毎月オンライン交流</h4>
+                    <p>英語・中国語で対話</p>
+                </div>
+                <div class="network-feature">
+                    <h4>海外パートナー校への相互訪問</h4>
+                    <p>実際に訪問し、交流を深める</p>
+                </div>
+                <div class="network-feature">
+                    <h4>サマー／ウィンタースクール</h4>
+                    <p>長期休暇を活用した学び</p>
+                </div>
+                <div class="network-feature">
+                    <h4>環境・国際課題の共同プロジェクト</h4>
+                    <p>世界の仲間と協働で取り組む</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.4rem; margin-top: 3rem;">
+                <strong style="color: var(--gold);">世界基準の教育を、「通える距離」で。</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- COMPARISON TABLE SECTION -->
+    <section class="comparison-table">
+        <div class="comparison-intro">
+            <h2 class="section-title">今の"習い事フルコース"と、<br>The Noble Academy の決定的な違い</h2>
+            
+            <h3>MORE OF THE SAME? OR A DIFFERENT GAME?</h3>
+            
+            <p>「詰め込み」を足しても、子どもは強くなりません。<br>
+            <strong>本質そのものを変える</strong>のが、The Noble Academy です。</p>
+            
+            <p>多くのご家庭が、すでにこうした投資をされています。<br>
+            インター系アフタースクール／語学教室／SAPIXなどの受験塾／各種習い事…。</p>
+            
+            <p>それでも、こんな不安は消えないはずです。</p>
+            
+            <div class="problem-box">
+                <ul>
+                    <li>「このまま偏差値だけの評価、塾のクラスが上がること・落ちないことが目標になっていて、大丈夫？」</li>
+                    <li>「受験が終わった瞬間、燃え尽きない？」</li>
+                    <li>「"いい学校に入ること"だけが目的になっていない？」</li>
+                </ul>
+            </div>
+            
+            <p style="font-size: 1.2rem; font-weight: 600; margin-top: 2rem;">
+                The Noble Academy は、<strong>「投資の"中身"」を、根本から変えるアフタースクール</strong>です。
+            </p>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>BEFORE：習い事を足していく発想</th>
+                        <th>AFTER：The Noble Academy を"核"にする発想</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>各教室・各先生バラバラ</td>
+                        <td>The Noble Academy が<strong>統合デザイン</strong></td>
+                    </tr>
+                    <tr>
+                        <td>「とりあえず機会を増やす」</td>
+                        <td><strong>人格 × 探究 × 語学 × 健康を一貫して育てる</strong></td>
+                    </tr>
+                    <tr>
+                        <td>テスト・級・偏差値・合否</td>
+                        <td><strong>人間力・探究・国際性・健康 × 入試での評価</strong></td>
+                    </tr>
+                    <tr>
+                        <td>移動だらけ／常に時間に追われる</td>
+                        <td><strong>一箇所で"深く"学び・遊び・育つ</strong></td>
+                    </tr>
+                    <tr>
+                        <td>「習う」時間が点在</td>
+                        <td><strong>毎日"で"学ぶイマージョン環境</strong></td>
+                    </tr>
+                    <tr>
+                        <td>単発イベント・ワークショップ</td>
+                        <td><strong>週単位カリキュラムとして継続</strong></td>
+                    </tr>
+                    <tr>
+                        <td>年に数回の"体験教室"</td>
+                        <td><strong>日常と週末に組み込まれた一流体験</strong></td>
+                    </tr>
+                    <tr>
+                        <td>各家庭に委ねられる</td>
+                        <td><strong>食養 × オーガニック × 指導付き</strong></td>
+                    </tr>
+                    <tr>
+                        <td>「やらされている」「忙しい」</td>
+                        <td><strong>「自分で選び、挑戦する」主体感</strong></td>
+                    </tr>
+                    <tr>
+                        <td>燃え尽き／勉強しなくなるリスク</td>
+                        <td><strong>受かった学校で"何をするか"を自分で決める</strong></td>
+                    </tr>
+                    <tr>
+                        <td>「ここまでやったから、あとは運」</td>
+                        <td><strong>「この6年間の環境なら、大丈夫」という安心感</strong></td>
+                    </tr>
+                    <tr>
+                        <td>「合格するかどうか」一点勝負</td>
+                        <td><strong>合格＋その後10〜20年の"伸び続ける力"</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-note">
+            <p>※中学受験塾との併用も可能です。<br>
+            その場合も、<strong>人格・探究・語学・健康の"土台"を The Noble Academy で整えたうえで</strong>、塾は「ツール」として合理的に使う設計を提案します。</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="/cdn-cgi/l/email-protection#74101b18185a110011061a1518181b0211341319151d185a171b19" class="cta-button">わが家の教育プランについて相談したい</a>
+        </div>
+    </section>
+
+    <!-- OUTCOMES SECTION -->
+    <section class="outcomes">
+        <div class="outcomes-content">
+            <h2 class="section-title">The Noble Academy が見据える出口</h2>
+            
+            <p style="font-size: 1.3rem; margin-bottom: 3rem;">
+                <strong>入ることをゴールにしない。<br>
+                「入ってからの10年」を見据えた教育設計。</strong>
+            </p>
+            
+            <ul class="outcomes-list">
+                <li>国内難関大 × IB・総合型選抜・推薦入試に対応する"物語のある実績"と人格・探究性</li>
+                <li>海外ボーディング／IB校／海外大学進学にも開かれた多言語・多文化コンピテンシー</li>
+                <li>偏差値ではなく、<strong>「本当に自分に合う学校」を自分の意思で選べる子</strong></li>
+            </ul>
+            
+            <div class="emphasis-text" style="margin-top: 4rem;">
+                受験は通過点。<br>
+                本当に大切なのは、<strong>合格した"その先の10年"</strong>です。
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDATION STORY SECTION -->
+    <section class="foundation-story">
+        <div class="foundation-content">
+            <h2 class="section-title">なぜ私は、この学校を創ったのか</h2>
+            
+            <p>日本ではいまだに、「正解を素早く出せる子」「従順で評価される子」が"優秀"とされがちです。</p>
+            
+            <p>しかし、社会に出た瞬間に必要なのは、自分で考え、人に信頼され、失敗から学び続ける力。</p>
+            
+            <p>私は長年、教育現場や企業で子ども・若者・社会人に関わる中で、<strong>「学歴はあるのに、人生を自分で創れない大人」</strong>をあまりにも多く見てきました。</p>
+            
+            <p>一方で、世界の一流家庭は——人格・探究心・創造性・語学・リーダーシップ・健康・文化・自然体験を、<strong>トータルで育てる統合教育</strong>を"当たり前"に選んでいます。</p>
+            
+            <div class="founder-quote">
+                「ないなら、私が創る。」
+            </div>
+            
+            <ul class="vision-list">
+                <li>語学</li>
+                <li>IB型探究</li>
+                <li>STEAM</li>
+                <li>文化</li>
+                <li>自然</li>
+                <li>食と健康</li>
+            </ul>
+            
+            <p>これらすべてを統合した、<strong>世界に誇れる教育機関を、日本にひとつ。</strong></p>
+            
+            <p>わが子に心から通わせたいと思える場として、<strong>THE NOBLE ACADEMY</strong> を立ち上げました。</p>
+        </div>
+    </section>
+
+    <!-- FOUNDER PROFILE SECTION -->
+    <section class="founder-profile">
+        <h2 class="section-title">創設者プロフィール</h2>
+        
+        <div class="founder-container">
+            <div class="founder-image-container">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Founder" class="founder-image">
+                <p class="founder-name">松丸 優里<br>Yuri Matsumaru</p>
+                <p class="founder-title">Founder / Director</p>
+            </div>
+            
+            <div class="founder-bio">
+                <p>日本語教育・キャリア教育の現場で、海外からの留学生や子どもたちの成長を支援してきた教育者。</p>
+                
+                <p>同時に、大手企業で「食の安全」の専門家としてキャリアを積み、食養生に基づく本物の食育を長年研究・実践。</p>
+                
+                <p>日本の受験・学校教育が、人格・創造性・リーダーシップ・健康を置き去りにしている現実に危機感を覚え、</p>
+                
+                <p><strong>「わが子に本気で通わせたい統合教育の場を、日本にひとつ創る。」</strong>という決意から The Noble Academy を設立。</p>
+                
+                <p>人格 × 国際教養 × 一流文化 × 本物の食を統合した日本唯一のエリート教育機関として、世界を導く次世代リーダーの育成に情熱を注いでいる。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMISSION GUIDE SECTION -->
+    <section class="admission-guide">
+        <div class="admission-content">
+            <h2 class="section-title">入会案内</h2>
+            
+            <div class="admission-details">
+                <div class="admission-card">
+                    <h4>対象</h4>
+                    <p>小学1年生</p>
+                </div>
+                <div class="admission-card">
+                    <h4>定員</h4>
+                    <p>少人数・選抜制</p>
+                </div>
+                <div class="admission-card">
+                    <h4>開校</h4>
+                    <p>2026年9月予定</p>
+                </div>
+                <div class="admission-card">
+                    <h4>場所</h4>
+                    <p>勝どき・晴海エリア</p>
+                </div>
+            </div>
+            
+            <div class="admission-note">
+                詳細なカリキュラム・入会条件・費用・送迎体制については、<br>
+                <strong>体験説明会・個別相談にてご案内いたします。</strong>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="/cdn-cgi/l/email-protection#41252e2d2d6f243524332f202d2d2e372401262c20282d6f222e2c" class="cta-button">体験説明会・個別相談を予約する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2>YOUR DECISION<br>CHANGES<br>THEIR FUTURE</h2>
+            
+            <div class="final-cta-message">
+                お子さまが20歳になったとき——
+            </div>
+            
+            <div class="final-cta-emphasis">
+                『あの時、親が選んでくれた教育のおかげで<br>
+                今の自分がある』
+            </div>
+            
+            <div class="final-cta-message">
+                そう言ってもらえる選択をしませんか？
+            </div>
+            
+            <p style="font-size: 1.3rem; margin: 3rem 0;">
+                あなたの <strong style="color: var(--gold);">"決断"</strong> が、<br>
+                お子さまの未来を変えます。
+            </p>
+            
+            <a href="/cdn-cgi/l/email-protection#3a5e555656145f4e5f48545b5656554c5f7a5d575b535614595557" class="cta-button">体験説明会・個別相談に申し込む</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">THE NOBLE ACADEMY</div>
+        <p class="footer-location">勝どき / 晴海エリア</p>
+        <a href="/cdn-cgi/l/email-protection#14707b78783a716071667a7578787b6271547379757d783a777b79" class="footer-contact">📩 <span class="__cf_email__" data-cfemail="13777c7f7f3d766776617d727f7f7c657653747e727a7f3d707c7e">[email&#160;protected]</span></a>
+        <p class="footer-tagline">Noble Mind. Noble Life.</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scroll animation on page load
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections except hero
+        document.querySelectorAll('section:not(.hero)').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
