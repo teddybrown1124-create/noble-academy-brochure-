@@ -36,10 +36,16 @@
             line-height: 1.8;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+            word-break: keep-all; /* 日本語の自然な改行 */
+            overflow-wrap: break-word; /* 長い英単語の適切な改行 */
         }
 
         .serif { font-family: 'Noto Serif JP', serif; }
-        .en-font { font-family: 'Cormorant Garamond', serif; letter-spacing: 0.05em; }
+        .en-font { 
+            font-family: 'Cormorant Garamond', serif; 
+            letter-spacing: 0.05em;
+            word-break: break-word; /* 長い英文の適切な改行 */
+        }
 
         /* Container */
         .container {
@@ -72,41 +78,42 @@
         .hero-content { position: relative; z-index: 1; }
 
         .logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 300;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             margin-bottom: 10px;
             color: var(--gold);
-            line-height: 1.3;
+            line-height: 1.4;
         }
 
         .hero-subtitle {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            margin-bottom: 40px;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            margin-bottom: 35px;
             opacity: 0.95;
             font-weight: 300;
             color: #ffffff;
+            line-height: 1.6;
         }
 
         .hero-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 500;
-            line-height: 1.7;
-            margin-bottom: 20px;
+            line-height: 1.8;
+            margin-bottom: 25px;
             color: #ffffff;
         }
 
         .hero-tagline {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--gold);
             margin-bottom: 30px;
             font-weight: 300;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .hero-description {
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.9;
             margin-bottom: 40px;
             font-weight: 300;
@@ -115,8 +122,8 @@
 
         .hero-brand { 
             font-weight: 600; 
-            letter-spacing: 0.08em; 
-            font-size: 1.1em;
+            letter-spacing: 0.05em; 
+            font-size: 1.05em;
             color: var(--gold);
         }
 
@@ -124,18 +131,18 @@
         .cta-button {
             display: block;
             width: 100%;
-            max-width: 360px;
+            max-width: 340px;
             margin: 0 auto;
-            padding: 18px 20px;
+            padding: 16px 20px;
             background: linear-gradient(135deg, var(--gold) 0%, var(--light-gold) 100%);
             color: var(--navy);
             text-decoration: none;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 600;
             border-radius: 50px;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             box-shadow: 0 5px 20px rgba(201, 169, 97, 0.4);
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
             text-align: center;
             line-height: 1.5;
         }
@@ -143,7 +150,7 @@
         .cta-button:active { transform: scale(0.96); }
 
         /* Sections */
-        section { padding: 80px 20px; }
+        section { padding: 70px 20px; }
         
         .section-dark {
             background: var(--navy);
@@ -156,21 +163,21 @@
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 300;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
             color: var(--gold);
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             font-weight: 400;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .section-dark .section-subtitle,
@@ -179,26 +186,26 @@
         }
 
         .divider {
-            width: 60px;
+            width: 50px;
             height: 1px;
             background: var(--gold);
-            margin: 40px auto;
+            margin: 35px auto;
             opacity: 0.6;
         }
 
         /* Typography Helper */
         .content-block p { 
-            margin-bottom: 24px; 
+            margin-bottom: 20px; 
             line-height: 1.8;
         }
         
         .content-block ul { 
             padding-left: 1em; 
-            margin-bottom: 30px; 
+            margin-bottom: 25px; 
         }
         
         .content-block li { 
-            margin-bottom: 15px; 
+            margin-bottom: 12px; 
             position: relative; 
             list-style: none;
             line-height: 1.8;
@@ -229,40 +236,42 @@
         .pillars-grid {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
         }
 
         .pillar {
             border: 1px solid var(--border-gold);
-            padding: 30px;
+            padding: 25px 20px;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 4px;
         }
         
         .pillar-number { 
             color: var(--gold); 
-            font-size: 0.9rem; 
-            margin-bottom: 5px; 
+            font-size: 0.85rem; 
+            margin-bottom: 8px; 
             opacity: 0.9; 
         }
         
         .pillar-title { 
-            font-size: 1.3rem; 
+            font-size: 1.25rem; 
             color: var(--gold); 
-            line-height: 1.4; 
-            margin-bottom: 10px; 
+            line-height: 1.5; 
+            margin-bottom: 8px; 
         }
         
         .pillar-subtitle { 
-            font-size: 1.1rem; 
+            font-size: 1.05rem; 
             margin-bottom: 15px; 
             font-weight: 600;
             color: #ffffff;
+            line-height: 1.6;
         }
 
         .pillar p {
             color: #ffffff;
             line-height: 1.8;
+            font-size: 0.95rem;
         }
 
         .pillar strong {
@@ -273,28 +282,29 @@
         .schedule-grid {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .schedule-item {
             background: white;
-            padding: 20px;
-            border-left: 5px solid var(--gold);
+            padding: 18px;
+            border-left: 4px solid var(--gold);
             border-radius: 4px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .schedule-day {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--gold);
             font-weight: 700;
-            letter-spacing: 0.1em;
-            margin-bottom: 5px;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
         }
 
         .schedule-content {
             color: var(--dark-gray);
             line-height: 1.7;
+            font-size: 0.9rem;
         }
 
         .schedule-content strong {
@@ -302,7 +312,7 @@
         }
 
         /* Mobile Optimized Table (Card View) */
-        .comparison-table { margin: 40px -10px; }
+        .comparison-table { margin: 35px -10px; }
 
         table { width: 100%; border-collapse: collapse; }
 
@@ -312,19 +322,21 @@
             thead { display: none; } 
             
             tr {
-                margin-bottom: 30px;
+                margin-bottom: 25px;
                 background: #fff;
-                border-radius: 8px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+                border-radius: 6px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
                 overflow: hidden;
                 border: 1px solid #eee;
             }
 
             td {
-                padding: 15px 20px;
+                padding: 12px 18px;
                 position: relative;
                 border-bottom: 1px solid #f0f0f0;
                 text-align: left;
+                font-size: 0.9rem;
+                line-height: 1.7;
             }
 
             td:first-child {
@@ -332,21 +344,20 @@
                 color: var(--gold);
                 font-weight: 600;
                 text-align: center;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
                 border-bottom: 2px solid var(--gold);
             }
 
             td:nth-child(2) {
-                font-size: 0.9rem;
                 color: #666;
-                padding-top: 30px;
+                padding-top: 25px;
             }
             
             td:nth-child(2)::before {
                 content: "BEFORE";
                 position: absolute;
-                top: 8px; left: 20px;
-                font-size: 0.7rem;
+                top: 6px; left: 18px;
+                font-size: 0.65rem;
                 color: #999;
                 font-family: 'Cormorant Garamond', serif;
                 font-weight: bold;
@@ -354,18 +365,17 @@
             }
 
             td:nth-child(3) {
-                font-size: 1rem;
                 font-weight: 600;
                 color: var(--navy);
                 background-color: rgba(201, 169, 97, 0.08);
-                padding-top: 30px;
+                padding-top: 25px;
             }
             
             td:nth-child(3)::before {
                 content: "AFTER";
                 position: absolute;
-                top: 8px; left: 20px;
-                font-size: 0.7rem;
+                top: 6px; left: 18px;
+                font-size: 0.65rem;
                 color: var(--gold);
                 font-family: 'Cormorant Garamond', serif;
                 font-weight: bold;
@@ -377,7 +387,7 @@
         @media (min-width: 768px) {
             .comparison-table { overflow-x: visible; }
             table { box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: white; }
-            th, td { padding: 20px; display: table-cell; border-bottom: 1px solid #eee; }
+            th, td { padding: 18px; display: table-cell; border-bottom: 1px solid #eee; }
             th { background: var(--navy); color: var(--gold); text-align: left; width: 20%; }
             td { color: var(--dark-gray); }
             td:first-child { font-weight: 600; color: var(--navy); background: #f8f8f8; }
@@ -388,62 +398,65 @@
         /* Profile */
         .profile-section {
             background: white;
-            padding: 40px 20px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 35px 20px;
+            border-radius: 6px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
             text-align: center;
         }
 
         .profile-name { 
-            font-size: 1.6rem; 
-            margin: 10px 0; 
+            font-size: 1.5rem; 
+            margin: 8px 0 15px; 
             color: var(--navy);
             line-height: 1.5;
         }
         
         .profile-description { 
             text-align: left;
-            margin-top: 30px;
+            margin-top: 25px;
             color: var(--dark-gray);
+            font-size: 0.95rem;
         }
 
         .profile-description p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             line-height: 1.8;
         }
 
         /* Admission */
         .admission-grid {
             border: 1px solid var(--border-gold);
-            padding: 30px;
-            border-radius: 8px;
+            padding: 25px 20px;
+            border-radius: 6px;
             background: rgba(255,255,255,0.05);
         }
         
         .admission-item {
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding: 15px 0;
+            padding: 12px 0;
             display: flex;
             flex-direction: column;
             color: #ffffff;
+            font-size: 0.95rem;
         }
         
         .admission-label { 
             color: var(--gold); 
             font-weight: 600; 
-            margin-bottom: 5px; 
+            margin-bottom: 4px; 
         }
 
         /* Emphasis Box */
         .emphasis-box {
-            padding: 25px;
+            padding: 20px 18px;
             background: rgba(201, 169, 97, 0.15);
             border-left: 4px solid var(--gold);
             font-weight: 600;
             line-height: 1.8;
-            margin: 30px 0;
+            margin: 25px 0;
             border-radius: 0 4px 4px 0;
             color: var(--dark-gray);
+            font-size: 0.95rem;
         }
 
         .section-dark .emphasis-box,
@@ -454,23 +467,23 @@
 
         /* Final Section */
         .final-cta { 
-            padding: 100px 20px; 
+            padding: 80px 20px; 
             text-align: center;
             background: linear-gradient(135deg, var(--navy) 0%, var(--dark-green) 100%);
             color: white;
         }
         
         .final-quote { 
-            font-size: 1.2rem; 
+            font-size: 1.1rem; 
             line-height: 1.8; 
             font-style: italic; 
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             color: #ffffff;
         }
         
         .contact-email { 
             color: var(--gold); 
-            font-size: 1rem; 
+            font-size: 0.95rem; 
             border-bottom: 1px solid var(--gold); 
             padding-bottom: 2px;
             text-decoration: none;
@@ -481,16 +494,16 @@
         .note-box {
             background: rgba(201, 169, 97, 0.1);
             border-left: 4px solid var(--gold);
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 5px;
-            font-size: 0.9rem;
+            padding: 18px;
+            margin: 25px 0;
+            border-radius: 4px;
+            font-size: 0.85rem;
             line-height: 1.8;
             color: var(--dark-gray);
         }
 
         .note-box p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .note-box p:last-child {
@@ -500,37 +513,62 @@
         /* PC Optimization */
         @media (min-width: 768px) {
             .container { max-width: 760px; }
-            .logo { font-size: 2.8rem; }
-            .hero-title { font-size: 2.2rem; }
-            .hero-tagline { font-size: 1.6rem; }
-            .section-title { font-size: 2.5rem; }
-            .section-subtitle { font-size: 1.4rem; }
-            .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-            .schedule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .logo { font-size: 2.5rem; }
+            .hero-title { font-size: 2rem; }
+            .hero-tagline { font-size: 1.5rem; }
+            .section-title { font-size: 2.3rem; }
+            .section-subtitle { font-size: 1.3rem; }
+            .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+            .schedule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
             .admission-item { flex-direction: row; justify-content: space-between; }
-            .profile-section { text-align: left; padding: 60px; }
-            .profile-name { font-size: 2rem; }
-            .hero { padding: 120px 20px; }
+            .profile-section { text-align: left; padding: 50px; }
+            .profile-name { font-size: 1.8rem; }
+            .hero { padding: 100px 20px 80px; }
+            section { padding: 100px 20px; }
         }
         
         @media (min-width: 1024px) {
             .container { max-width: 1000px; }
             section { padding: 120px 20px; }
-            .logo { font-size: 3.5rem; }
-            .hero-title { font-size: 2.5rem; }
-            .section-title { font-size: 3rem; }
+            .logo { font-size: 3.2rem; }
+            .hero-title { font-size: 2.3rem; }
+            .section-title { font-size: 2.8rem; }
         }
 
-        /* Galaxy S24+ specific optimization (6.7 inch, 412px width) */
-        @media (min-width: 400px) and (max-width: 430px) {
-            .logo { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 0.8rem; letter-spacing: 0.12em; }
-            .hero-title { font-size: 1.6rem; }
-            .hero-tagline { font-size: 1.4rem; }
-            .section-title { font-size: 1.9rem; }
-            .section-subtitle { font-size: 1.25rem; }
-            .pillar-title { font-size: 1.35rem; }
-            .cta-button { font-size: 1.05rem; padding: 19px 25px; }
+        /* Mobile specific break fixes */
+        @media (max-width: 767px) {
+            /* 英文の自然な改行を促進 */
+            .en-font {
+                word-break: break-word;
+                hyphens: auto;
+                -webkit-hyphens: auto;
+            }
+            
+            /* 長いテキストの改行調整 */
+            .hero-description,
+            .content-block p,
+            .pillar p {
+                text-align: left;
+                hyphens: auto;
+                -webkit-hyphens: auto;
+            }
+            
+            /* セクションタイトルの改行調整 */
+            .section-title br {
+                display: inline;
+            }
+            
+            .section-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            /* 実際は改行を許可 */
+            .section-title {
+                white-space: normal;
+                word-break: keep-all;
+            }
         }
     </style>
 </head>
@@ -538,26 +576,26 @@
 
     <header class="hero">
         <div class="container hero-content">
-            <h1 class="logo en-font">THE NOBLE<br>ACADEMY</h1>
-            <p class="hero-subtitle en-font">JAPAN'S PREMIER ELITE<br>EDUCATION AFTER SCHOOL</p>
+            <h1 class="logo en-font">THE NOBLE ACADEMY</h1>
+            <p class="hero-subtitle en-font">JAPAN'S PREMIER ELITE EDUCATION AFTER SCHOOL</p>
             
-            <h2 class="hero-title serif">国際人としての資質を養う<br>人格育成アフタースクール</h2>
+            <h2 class="hero-title serif">国際人としての資質を養う人格育成アフタースクール</h2>
             
-            <p class="hero-tagline en-font serif">Noble Mind.<br>Noble Life.</p>
+            <p class="hero-tagline en-font serif">Noble Mind. Noble Life.</p>
             
             <div class="hero-description">
                 わが子の幸せを心から願う一流家庭が求めてきた、「本物の人格教育 × 国際教養 × 一流文化 × 健康」。<br><br>
                 そのすべてを、日本で初めて体系化し、形にしたのが <span class="hero-brand en-font">THE NOBLE ACADEMY</span> です。
             </div>
             
-            <a href="mailto:doll.eternallove@gmail.com" class="cta-button">体験説明会・個別相談に<br>申し込む</a>
+            <a href="mailto:doll.eternallove@gmail.com" class="cta-button">体験説明会・個別相談に申し込む</a>
         </div>
     </header>
 
     <section id="why-now">
         <div class="container">
             <h2 class="section-title en-font">WHY NOW?</h2>
-            <h3 class="section-subtitle serif">なぜ今、「人格教育」が<br>必須なのか</h3>
+            <h3 class="section-subtitle serif">なぜ今、「人格教育」が必須なのか</h3>
             
             <div class="content-block">
                 <p>受験競争は過熱し、塾漬けの子どもが増えています。</p>
@@ -579,25 +617,24 @@
                 </ul>
                 
                 <div class="emphasis-box">
-                    「優秀に見えて、"生きる力"が脆い。」<br>
-                    これが、今の日本の子どもたちの現実です。
+                    「優秀に見えて、"生きる力"が脆い。」これが、今の日本の子どもたちの現実です。
                 </div>
                 
-                <p style="margin-top: 40px;">そして今、もうひとつ確実に起きている変化があります。</p>
+                <p>そして今、もうひとつ確実に起きている変化があります。</p>
             </div>
         </div>
     </section>
 
     <section class="section-dark" id="entrance-exams">
         <div class="container">
-            <h2 class="section-title en-font">ENTRANCE EXAMS<br>ARE CHANGING</h2>
-            <h3 class="section-subtitle serif">入試は、すでに<br>"人間力シフト"している</h3>
+            <h2 class="section-title en-font">ENTRANCE EXAMS ARE CHANGING</h2>
+            <h3 class="section-subtitle serif">入試は、すでに"人間力シフト"している</h3>
             
             <div class="content-block">
                 <p>東大をはじめとする難関大学は、IB入試・推薦入試・総合型選抜の比重を年々高めています。</p>
                 <p>広尾学園などの一流中高も、自己推薦・探究・プレゼン・ポートフォリオを正面から評価する入試へ舵を切っています。</p>
                 
-                <p style="margin-top: 30px;">これから増えていくのは、「偏差値が高い子」だけを評価する学校ではありません。</p>
+                <p>これから増えていくのは、「偏差値が高い子」だけを評価する学校ではありません。</p>
                 
                 <ul>
                     <li>何を探究してきたか</li>
@@ -606,9 +643,7 @@
                     <li>社会にどう貢献したいか</li>
                 </ul>
                 
-                <p style="margin-top: 30px;">
-                    <strong>"人格 × 探究 × 創造性"</strong> を問う学校が、一流校を中心に、今後さらに増えていきます。
-                </p>
+                <p><strong>"人格 × 探究 × 創造性"</strong> を問う学校が、一流校を中心に、今後さらに増えていきます。</p>
                 
                 <div class="emphasis-box">
                     受験勉強"だけ"で勝てる時代は、確実に終わりつつあります。
@@ -620,7 +655,7 @@
     <section id="after-exam">
         <div class="container">
             <h2 class="section-title en-font">AFTER THE EXAM</h2>
-            <h3 class="section-subtitle serif">「受かった後」に、<br>決定的な差がつく</h3>
+            <h3 class="section-subtitle serif">「受かった後」に、決定的な差がつく</h3>
             
             <div class="content-block">
                 <p>受験勉強"だけ"に追い込まれた子どもは、合格した瞬間にこうなりがちです。</p>
@@ -630,7 +665,7 @@
                     <li>自分で目標を立てられない</li>
                 </ul>
                 
-                <p style="font-weight: 600; margin-top: 25px; text-align:center;">合格した瞬間が"ゴール"になってしまう。</p>
+                <p style="font-weight: 600; text-align:center;">合格した瞬間が"ゴール"になってしまう。</p>
                 
                 <div class="divider"></div>
                 
@@ -641,7 +676,7 @@
                     <li>「入学してから、ここで何を成し遂げるか」を考え始める</li>
                 </ul>
                 
-                <p style="margin-top: 25px;">だからこそ、入った瞬間からがスタートになり、周りと比べものにならない <strong>"伸びしろ"</strong> を発揮していきます。</p>
+                <p>だからこそ、入った瞬間からがスタートになり、周りと比べものにならない <strong>"伸びしろ"</strong> を発揮していきます。</p>
                 
                 <div class="emphasis-box">
                     The Noble Academy が育てたいのは、「合格する子」ではなく、「合格した後に伸び続ける子」。<br><br>
@@ -653,11 +688,11 @@
 
     <section class="section-accent" id="noble-education">
         <div class="container">
-            <h2 class="section-title en-font">NOBLE<br>EDUCATION</h2>
-            <h3 class="section-subtitle serif">The Noble Academy が<br>統合する6つの核</h3>
+            <h2 class="section-title en-font">NOBLE EDUCATION</h2>
+            <h3 class="section-subtitle serif">The Noble Academy が統合する6つの核</h3>
             
             <div class="content-block">
-                <ul style="font-size: 1.05rem; font-weight: 500;">
+                <ul style="font-weight: 500;">
                     <li>人格（Character）</li>
                     <li>国際教養（Global Literacy）</li>
                     <li>本物の食育（Authentic Food Education）</li>
@@ -666,11 +701,11 @@
                     <li>STEAM（未来の問題を解決する力）</li>
                 </ul>
                 
-                <p style="font-size: 1.15rem; line-height: 1.8; text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.1rem; line-height: 1.8; text-align: center; margin-top: 30px;">
                     心・知性・感性・身体のすべてを育てる、<br><strong>日本唯一の統合型アフタースクール</strong>です。
                 </p>
                 
-                <p style="text-align: center; margin-top: 20px;">
+                <p style="text-align: center;">
                     ここで育つのは、自ら未来を創造し、世界を導く力を備えた子どもたち。
                 </p>
             </div>
@@ -679,31 +714,30 @@
 
     <section id="five-pillars">
         <div class="container">
-            <h2 class="section-title en-font">FIVE PILLARS OF<br>NOBLE EDUCATION</h2>
+            <h2 class="section-title en-font">FIVE PILLARS OF NOBLE EDUCATION</h2>
             <h3 class="section-subtitle serif">5つの柱</h3>
             
             <div class="pillars-grid">
                 <div class="pillar">
                     <div class="pillar-number en-font">01</div>
-                    <h3 class="pillar-title en-font">CHARACTER<br>DEVELOPMENT</h3>
+                    <h3 class="pillar-title en-font">CHARACTER DEVELOPMENT</h3>
                     <h4 class="pillar-subtitle serif">人格教育</h4>
                     <p>礼節・誠実さ・集中力・共感力・自己管理・レジリエンス・マインドフルネス。<br><strong>「一生折れない、しなやかでたくましい心」</strong>を育みます。</p>
                 </div>
                 
                 <div class="pillar">
                     <div class="pillar-number en-font">02</div>
-                    <h3 class="pillar-title en-font">GLOBAL LITERACY &<br>BILINGUAL MASTERY</h3>
-                    <h4 class="pillar-subtitle serif">国際教養 ×<br>バイリンガル教育</h4>
-                    <p>英語70% × 中国語30% のイマージョン環境。<br>
-                    「英語と中国語"を"学ぶ」のではなく、英語と中国語"で"学ぶ6年間。<br>
+                    <h3 class="pillar-title en-font">GLOBAL LITERACY & BILINGUAL MASTERY</h3>
+                    <h4 class="pillar-subtitle serif">国際教養 × バイリンガル教育</h4>
+                    <p>英語70% × 中国語30% のイマージョン環境。「英語と中国語"を"学ぶ」のではなく、英語と中国語"で"学ぶ6年間。<br>
                     卒業時には、<strong>日本語＋3言語（計4言語）で世界と渡り合える力</strong>を目指します。<br>
                     小学6年生までに TOEFL iBT 90点以上の取得をひとつの目安とし、実践的な運用力を徹底して鍛えます。</p>
                 </div>
                 
                 <div class="pillar">
                     <div class="pillar-number en-font">03</div>
-                    <h3 class="pillar-title en-font">STEAM<br>EDUCATION</h3>
-                    <h4 class="pillar-subtitle serif">未来の問題を<br>解決する力</h4>
+                    <h3 class="pillar-title en-font">STEAM EDUCATION</h3>
+                    <h4 class="pillar-subtitle serif">未来の問題を解決する力</h4>
                     <p>科学・テクノロジー・工学・芸術・数学を統合し、<strong>「未来を創る問題解決力」</strong>を育成。<br>
                     実験・ロボティクス・プログラミング・アート・数学ゲーム。<br>
                     知識ではなく、<strong>「自分の頭で考え、形にする力」</strong>にフォーカスします。</p>
@@ -711,7 +745,7 @@
                 
                 <div class="pillar">
                     <div class="pillar-number en-font">04</div>
-                    <h3 class="pillar-title en-font">PREMIUM CULTURAL<br>EXPERIENCES</h3>
+                    <h3 class="pillar-title en-font">PREMIUM CULTURAL EXPERIENCES</h3>
                     <h4 class="pillar-subtitle serif">一流文化体験</h4>
                     <p>茶道・書道・華道、一流ホテル・料亭でのマナー、クラシック音楽・美術館・劇場、神社参拝・里山体験…。<br>
                     一流の講師 × 一流の環境 × 一流の体験で、<strong>「本物を体得した一流の人格」</strong>を育みます。</p>
@@ -719,7 +753,7 @@
                 
                 <div class="pillar">
                     <div class="pillar-number en-font">05</div>
-                    <h3 class="pillar-title en-font">AUTHENTIC FOOD<br>EDUCATION</h3>
+                    <h3 class="pillar-title en-font">AUTHENTIC FOOD EDUCATION</h3>
                     <h4 class="pillar-subtitle serif">本物の食育 × 食養生</h4>
                     <p>人の体は、食べたものでしかつくられません。<br>
                     • 自然栽培の分づき米（土鍋炊き）<br>
@@ -736,8 +770,8 @@
 
     <section class="section-dark" id="schedule">
         <div class="container">
-            <h2 class="section-title en-font">WEEKLY<br>SCHEDULE</h2>
-            <h3 class="section-subtitle serif">こんな1週間を<br>過ごします</h3>
+            <h2 class="section-title en-font">WEEKLY SCHEDULE</h2>
+            <h3 class="section-subtitle serif">こんな1週間を過ごします</h3>
             
             <div class="schedule-grid">
                 <div class="schedule-item">
@@ -781,19 +815,19 @@
                 </div>
             </div>
             
-            <p style="text-align: center; font-size: 1.15rem; margin-top: 50px; font-weight: 300; color: #ffffff;">
-                毎日が新しい発見、<br>毎週が成長のサイクル。
+            <p style="text-align: center; font-size: 1.05rem; margin-top: 40px; font-weight: 300; color: #ffffff;">
+                毎日が新しい発見、毎週が成長のサイクル。
             </p>
         </div>
     </section>
 
     <section id="weekend">
         <div class="container">
-            <h2 class="section-title en-font">Weekend Signature<br>Program</h2>
+            <h2 class="section-title en-font">Weekend Signature Program</h2>
             <h3 class="section-subtitle serif">週末特別プログラム</h3>
             
             <div class="content-block">
-                <h3 class="en-font" style="color: var(--navy); margin-bottom:10px;">OUTDOOR EDUCATION</h3>
+                <h3 class="en-font" style="color: var(--navy);">OUTDOOR EDUCATION</h3>
                 <h4 class="serif" style="color: var(--dark-gray);">自然教育</h4>
                 
                 <p>UWC／Aiglon／Le Rosey／Forest School が採用する本格的なアウトドア体験を、都内の自然豊かな公園や軽井沢の大自然の中で実践します。</p>
@@ -804,13 +838,13 @@
                     <li>農業体験</li>
                     <li>サバイバル体験</li>
                 </ul>
-                <p style="font-weight: 600; margin-top: 20px; text-align:center; color: var(--dark-gray);">自然の中で育つのは、「生きる力」と「仲間との絆」。</p>
+                <p style="font-weight: 600; text-align:center; color: var(--dark-gray);">自然の中で育つのは、「生きる力」と「仲間との絆」。</p>
             </div>
             
             <div class="divider"></div>
             
             <div class="content-block">
-                <h3 class="en-font" style="color: var(--navy); margin-bottom:10px;">Parent–Child Program</h3>
+                <h3 class="en-font" style="color: var(--navy);">Parent–Child Program</h3>
                 <h4 class="serif" style="color: var(--dark-gray);">親子食育（季節の手仕事）</h4>
                 
                 <p>人の体は、食べたものでしかつくられません。どれほど高価なサプリメントでも、どれほど希少な薬でも、"体" をつくることはできません。</p>
@@ -823,15 +857,15 @@
                     <li>季節の食養料理</li>
                     <li>クリスマスケーキ　他</li>
                 </ul>
-                <p style="font-weight: 600; margin-top: 20px; text-align:center; color: var(--dark-gray);">「この家に生まれてよかった」と思える一生ものの土台を、親子で一緒に育みます。</p>
+                <p style="font-weight: 600; text-align:center; color: var(--dark-gray);">「この家に生まれてよかった」と思える一生ものの土台を、親子で一緒に育みます。</p>
             </div>
         </div>
     </section>
 
     <section class="section-accent" id="global">
         <div class="container">
-            <h2 class="section-title en-font">GLOBAL<br>NETWORK</h2>
-            <h3 class="section-subtitle serif">世界の教室が、<br>勝どきとつながる</h3>
+            <h2 class="section-title en-font">GLOBAL NETWORK</h2>
+            <h3 class="section-subtitle serif">世界の教室が、勝どきとつながる</h3>
             
             <div class="content-block">
                 <p>UWC / シンガポール名門校 / スイスのIB校 / 中国名門IB校 と連携した、本物の国際交流プログラム。</p>
@@ -841,8 +875,8 @@
                     <li>サマー／ウィンタースクール</li>
                     <li>環境・国際課題の共同プロジェクト</li>
                 </ul>
-                <p style="font-size: 1.15rem; margin-top: 40px; font-weight: 500; text-align:center;">
-                    世界基準の教育を、<br>「通える距離」で。
+                <p style="font-size: 1.05rem; font-weight: 500; text-align:center;">
+                    世界基準の教育を、「通える距離」で。
                 </p>
             </div>
         </div>
@@ -851,11 +885,11 @@
     <section id="comparison">
         <div class="container">
             <h2 class="section-title en-font">BEFORE / AFTER</h2>
-            <h3 class="section-subtitle serif">今の"習い事フルコース"と、<br>The Noble Academy の<br>決定的な違い</h3>
+            <h3 class="section-subtitle serif">今の"習い事フルコース"と、The Noble Academy の決定的な違い</h3>
             
             <div class="content-block">
-                <p style="text-align: center; font-size: 1.1rem; font-weight: 600; margin-bottom: 30px; color: var(--navy);">
-                    <span class="en-font">MORE OF THE SAME?<br>OR A DIFFERENT GAME?</span>
+                <p style="text-align: center; font-weight: 600; margin-bottom: 25px; color: var(--navy);">
+                    <span class="en-font">MORE OF THE SAME? OR A DIFFERENT GAME?</span>
                 </p>
                 
                 <p>「詰め込み」を足しても、子どもは強くなりません。本質そのものを変えるのが、The Noble Academy です。</p>
@@ -872,7 +906,7 @@
                 </div>
             </div>
             
-            <p style="text-align: center; font-weight: 600; margin: 40px 0 20px; color: var(--dark-gray);">比較表</p>
+            <p style="text-align: center; font-weight: 600; margin: 30px 0 15px; color: var(--dark-gray);">比較表</p>
             
             <div class="comparison-table">
                 <table>
@@ -953,8 +987,8 @@
                 その場合も、人格・探究・語学・健康の"土台"を The Noble Academy で整えたうえで、塾は「ツール」として合理的に使う設計を提案します。</p>
             </div>
             
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="mailto:doll.eternallove@gmail.com" class="cta-button">わが家の教育プランについて<br>相談したい</a>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="mailto:doll.eternallove@gmail.com" class="cta-button">わが家の教育プランについて相談したい</a>
             </div>
         </div>
     </section>
@@ -962,12 +996,11 @@
     <section class="section-dark" id="outcomes">
         <div class="container">
             <h2 class="section-title en-font">OUTCOMES</h2>
-            <h3 class="section-subtitle serif">The Noble Academy が<br>見据える出口</h3>
+            <h3 class="section-subtitle serif">The Noble Academy が見据える出口</h3>
             
             <div class="content-block">
-                <p style="font-size: 1.15rem; margin-bottom: 30px; text-align:center;">
-                    入ることをゴールにしない。<br>
-                    「入ってからの10年」を見据えた教育設計。
+                <p style="font-size: 1.05rem; text-align:center;">
+                    入ることをゴールにしない。「入ってからの10年」を見据えた教育設計。
                 </p>
                 
                 <ul>
@@ -977,8 +1010,7 @@
                 </ul>
                 
                 <div class="emphasis-box">
-                    受験は通過点。<br>
-                    本当に大切なのは、<strong>合格した"その先の10年"</strong>です。
+                    受験は通過点。本当に大切なのは、<strong>合格した"その先の10年"</strong>です。
                 </div>
             </div>
         </div>
@@ -986,17 +1018,17 @@
 
     <section id="principal">
         <div class="container">
-            <h2 class="section-title en-font">THE PRINCIPAL<br>PROFILE</h2>
+            <h2 class="section-title en-font">THE PRINCIPAL PROFILE</h2>
             
             <div class="profile-section">
-                <p class="en-font" style="color:var(--gold); font-size: 0.95rem;">Founding Principal</p>
-                <h3 class="profile-name">Yuri Matsumaru<br>（松丸 優里）</h3>
+                <p class="en-font" style="color:var(--gold); font-size: 0.9rem;">Founding Principal</p>
+                <h3 class="profile-name">Yuri Matsumaru（松丸 優里）</h3>
                 
                 <div class="profile-description">
                     <p>日本語教育・キャリア教育の現場で、海外からの留学生や子どもたちの成長を支援してきた教育者。</p>
                     <p>同時に、大手企業で「食の安全」の専門家としてキャリアを積み、食養生に基づく本物の食育を長年研究・実践。</p>
                     <p>日本の受験・学校教育が、人格・創造性・リーダーシップ・健康を置き去りにしている現実に危機感を覚え、</p>
-                    <p style="font-weight: 600; color:var(--navy); margin:25px 0;">「わが子に本気で通わせたい統合教育の場を、日本にひとつ創る。」</p>
+                    <p style="font-weight: 600; color:var(--navy); margin:20px 0;">「わが子に本気で通わせたい統合教育の場を、日本にひとつ創る。」</p>
                     <p>という決意から The Noble Academy を設立。</p>
                     <p>人格 × 国際教養 × 一流文化 × 本物の食を統合した日本唯一のエリート教育機関として、世界を導く次世代リーダーの育成に情熱を注いでいる。</p>
                 </div>
@@ -1006,7 +1038,7 @@
 
     <section class="section-accent" id="admission">
         <div class="container">
-            <h2 class="section-title en-font">ADMISSION<br>GUIDE</h2>
+            <h2 class="section-title en-font">ADMISSION GUIDE</h2>
             <h3 class="section-subtitle serif">入会案内</h3>
             
             <div class="admission-grid">
@@ -1028,19 +1060,19 @@
                 </div>
             </div>
             
-            <p style="text-align: center; font-size: 0.95rem; margin-top: 30px; line-height: 1.8; color: #ffffff;">
-                詳細なカリキュラム・入会条件・費用・送迎体制については、<br>体験説明会・個別相談にてご案内いたします。
+            <p style="text-align: center; font-size: 0.9rem; line-height: 1.8; color: #ffffff;">
+                詳細なカリキュラム・入会条件・費用・送迎体制については、体験説明会・個別相談にてご案内いたします。
             </p>
             
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="mailto:doll.eternallove@gmail.com" class="cta-button">体験説明会・個別相談を<br>予約する</a>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="mailto:doll.eternallove@gmail.com" class="cta-button">体験説明会・個別相談を予約する</a>
             </div>
         </div>
     </section>
 
     <section class="final-cta">
         <div class="container">
-            <h2 class="section-title en-font" style="font-size: 1.8rem; margin-bottom: 50px; line-height: 1.5;">YOUR DECISION<br>CHANGES<br>THEIR FUTURE</h2>
+            <h2 class="section-title en-font" style="font-size: 1.6rem; margin-bottom: 40px;">YOUR DECISION CHANGES THEIR FUTURE</h2>
             
             <div class="final-quote serif">
                 「お子さまが20歳になったとき——<br><br>
@@ -1048,22 +1080,21 @@
                 そう言ってもらえる選択をしませんか？」
             </div>
             
-            <p style="font-size: 1.15rem; margin: 40px 0; color: #ffffff;">
-                あなたの <strong style="color: var(--gold);">"決断"</strong> が、<br>
-                お子さまの未来を変えます。
+            <p style="font-size: 1.05rem; margin: 30px 0; color: #ffffff;">
+                あなたの <strong style="color: var(--gold);">"決断"</strong> が、お子さまの未来を変えます。
             </p>
             
-            <div class="divider" style="background: var(--gold); margin: 50px auto;"></div>
+            <div class="divider" style="background: var(--gold); margin: 40px auto;"></div>
             
-            <h3 class="en-font" style="font-size: 1.7rem; color: var(--gold); margin-bottom: 10px; line-height: 1.4;">THE NOBLE<br>ACADEMY</h3>
-            <p style="margin-bottom: 30px; opacity: 0.9; color: #ffffff;">勝どき / 晴海エリア</p>
+            <h3 class="en-font" style="font-size: 1.5rem; color: var(--gold); margin-bottom: 8px;">THE NOBLE ACADEMY</h3>
+            <p style="margin-bottom: 25px; opacity: 0.9; color: #ffffff;">勝どき / 晴海エリア</p>
             
-            <p style="margin-bottom: 20px; color: #ffffff;">📩 <a href="mailto:doll.eternallove@gmail.com" class="contact-email">doll.eternallove@gmail.com</a></p>
+            <p style="margin-bottom: 15px; color: #ffffff;">📩 <a href="mailto:doll.eternallove@gmail.com" class="contact-email">doll.eternallove@gmail.com</a></p>
             
-            <p class="en-font serif" style="font-size: 1.15rem; color:var(--gold); letter-spacing:0.1em; line-height: 1.5;">Noble Mind.<br>Noble Life.</p>
+            <p class="en-font serif" style="font-size: 1.05rem; color:var(--gold); letter-spacing:0.08em;">Noble Mind. Noble Life.</p>
             
-            <div style="margin-top: 50px;">
-                <a href="mailto:doll.eternallove@gmail.com" class="cta-button">今すぐ体験説明会に<br>申し込む</a>
+            <div style="margin-top: 40px;">
+                <a href="mailto:doll.eternallove@gmail.com" class="cta-button">今すぐ体験説明会に申し込む</a>
             </div>
         </div>
     </section>
